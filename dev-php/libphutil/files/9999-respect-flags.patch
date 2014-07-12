@@ -1,0 +1,30 @@
+diff --git a/support/xhpast/Makefile b/support/xhpast/Makefile
+index 215f243..2afebe9 100644
+--- a/support/xhpast/Makefile
++++ b/support/xhpast/Makefile
+@@ -1,7 +1,7 @@
+ ifdef DEBUG
+ CPPFLAGS = -fPIC -ggdb -Wall -DDEBUG
+ else
+-CPPFLAGS = -fPIC -g -Wall -O3 -minline-all-stringops
++CPPFLAGS = -fPIC -Wall -minline-all-stringops
+ endif
+ 
+ ifdef PROFILE
+@@ -45,7 +45,7 @@ node_names.hpp: generate_nodes.php
+ 	cp parser_nodes.php $(ROOT)/
+ 
+ %.o: %.cpp
+-	$(CXX) -c $(CPPFLAGS) -o $@ $<
++	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) -o $@ $<
+ 
+ needparserscanner:
+ 	 @([ -e parser.yacc.hpp ] && [ -e parser.yacc.cpp ] && \
+@@ -60,6 +60,6 @@ libxhpast.a: astnode.o scanner.lex.o parser.yacc.o
+ 	$(AR) -crs $@ $^
+ 
+ xhpast: xhpast.cpp libxhpast.a
+-	$(CXX) $(CPPFLAGS) -o $@ $^
++	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@ $^
+ 
+ .PHONY: all clean
