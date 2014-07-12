@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>support@stepping-stone.ch</email>
+		<name>stepping stone Support Team</name>
+	</maintainer>
+	<use>
+		<flag name='git'>Make sure everything is installed to host git repositories</flag>
+		<flag name='subversion'>Make sure everything is installed to host subversion repositories</flag>
+	</use>
+</pkgmetadata>

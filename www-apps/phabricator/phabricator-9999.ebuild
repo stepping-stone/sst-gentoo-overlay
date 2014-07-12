@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/phacility/phabricator.git"
 
 LICENSE="Apache-2.0"
 KEYWORDS=""
-IUSE="git nginx svn"
+IUSE="git subversion"
 
 DEPEND=""
 RDEPEND="dev-vcs/arcanist
@@ -20,9 +20,8 @@ RDEPEND="dev-vcs/arcanist
 	virtual/httpd-php
 	dev-lang/php[iconv,curl,pcntl]
 	|| ( dev-lang/php[mysql] dev-lang/php[mysqli] )
-	git? ( dev-vcs/git
-		nginx? ( dev-vcs/git[cgi] ) )
-	svn? ( dev-vcs/subversion )"
+	git? ( dev-vcs/git[cgi] )
+	subversion? ( dev-vcs/subversion )"
 
 src_install() {
 	webapp_src_preinst
