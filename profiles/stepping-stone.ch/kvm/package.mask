@@ -1,0 +1,14 @@
+# Use kmod instead of module-init-tools since this is the Gentoo/upstream default
+sys-apps/module-init-tools
+
+# Block newer versions of zabbix since our server is still on 1.8
+>=net-analyzer/zabbix-2
+
+# Mask nullmailer to force msmtp for virtual/mta (next in list of deps after nullmailer)
+# while allowing others (like postfix for the new postfix-nullmailer setup) to be installed instead
+mail-mta/nullmailer
+
+# We're using the longterm 3.10.X kernel
+>=sys-kernel/linux-headers-3.11
+>=sys-kernel/gentoo-sources-3.11
+>=sys-kernel/hardened-sources-3.11

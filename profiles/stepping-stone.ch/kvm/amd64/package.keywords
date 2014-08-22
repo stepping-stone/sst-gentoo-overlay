@@ -1,0 +1,17 @@
+<sys-kernel/gentoo-sources-3.10.9999 amd64
+<sys-kernel/linux-headers-3.10.9999 amd64
+
+app-admin/augeas amd64
+dev-ruby/ruby-augeas amd64
+dev-ruby/facter amd64
+dev-ruby/ruby-shadow amd64
+app-admin/puppet amd64
+dev-ruby/rgen amd64
+dev-ruby/hiera amd64
+app-vim/puppet-syntax amd64
+
+# we need a qemu-guest-agent, and preferrably the same major version
+# as the host. gemu-guest-agent expects shutdown to be callable with "-H" or "-P"
+# but without "-h" which is only the case since 2.88-r5 on Gentoo.
+<app-emulation/qemu-guest-agent-1.6 amd64
+=sys-apps/sysvinit-2.88-r5 amd64

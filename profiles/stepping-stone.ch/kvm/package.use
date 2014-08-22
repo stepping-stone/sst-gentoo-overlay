@@ -1,0 +1,23 @@
+net-analyzer/zabbix agent -sqlite3
+
+# need LVM for disk layout created after September 2013,
+# but disable obsolete lvm1 support, and thin provisioning
+# which pulls in dev-libs/boost
+sys-fs/lvm2 -lvm1 -thin
+
+# install a minimal git for now
+dev-vcs/git -gpg -perl -python
+
+# eix is required for puppet and gets executed several times,
+# enable optimization to make that (hopefully) faster
+app-portage/eix optimization
+
+# we want to be able to modify single values in config fiels
+# and creating/modifying users
+app-admin/puppet augeas shadow
+
+# eix pulls in sqlite anyway, furthermore it is required for bleachbit
+dev-lang/python sqlite
+
+# disable the gtk USE flag for bleachbit by default to avoid X11-dependency
+sys-apps/bleachbit -gtk
