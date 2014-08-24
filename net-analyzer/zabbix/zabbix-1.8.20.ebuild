@@ -17,7 +17,7 @@ HOMEPAGE="http://www.zabbix.com/"
 SRC_URI="mirror://sourceforge/zabbix/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="+agent curl frontend ipv6 jabber ldap mysql openipmi postgres proxy server ssh snmp +sqlite iodbc odbc"
 REQUIRED_USE="server? ( ^^ ( mysql postgres sqlite ) )
 	proxy? ( ^^ ( mysql postgres sqlite ) )

@@ -1,0 +1,10 @@
+Please follow the official guide to complete the installation after having the
+application installed using webapp-config:
+
+  https://secure.phabricator.com/book/phabricator/article/configuration_guide/
+
+For the initial "storage upgrade" we recommend to use "--force" to workaround
+a bug which prevents the script from loading the quickstart sql:
+
+  cd $PHABRICARINSTALLDIR
+  ./bin/storage upgrade --force
