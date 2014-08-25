@@ -21,3 +21,6 @@ dev-lang/python sqlite
 
 # disable the gtk USE flag for bleachbit by default to avoid X11-dependency
 sys-apps/bleachbit -gtk
+
+# For the nullmailer setup we need sasl but no pam
+mail-mta/postfix sasl -pam
