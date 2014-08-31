@@ -28,7 +28,9 @@ src_install() {
 	
 	dodoc README NOTICE
 
-	cp -R . "${D}/${MY_HTDOCSDIR}" || die
+	cp -R \
+		bin conf externals resources scripts src support webroot \
+		"${D}/${MY_HTDOCSDIR}" || die
 
 	webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
 
