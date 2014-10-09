@@ -11,7 +11,4 @@ dev-ruby/hiera amd64
 app-vim/puppet-syntax amd64
 
 # we need a qemu-guest-agent, and preferrably the same major version
-# as the host. gemu-guest-agent expects shutdown to be callable with "-H" or "-P"
-# but without "-h" which is only the case since 2.88-r5 on Gentoo.
 <app-emulation/qemu-guest-agent-2.2 amd64
-=sys-apps/sysvinit-2.88-r5 amd64
