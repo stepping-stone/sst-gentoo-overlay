@@ -5,7 +5,6 @@
 LDFLAGS="-Wl,-O1,--hash-style=gnu,--sort-common -Wl,--as-needed"
 
 GENTOO_MIRRORS="https://mirror.stepping-stone.ch/public/gentoo http://mirror.switch.ch/ftp/mirror/gentoo"
-SYNC="rsync://rsync.stepping-stone.ch/gentoo-portage"
 
 # bash-completion: you do like less-typing, don't you?
 # caps: services can drop their priviliges
