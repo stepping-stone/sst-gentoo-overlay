@@ -64,7 +64,7 @@ src_install() {
 
 	# Install configuration files in the conf directory instead of bin
 	insinto "${WILDFLY_DEFAULT_CONF_DIR}"
-	doins bin/*.conf bin/*.xml bin/*.properties
+	doins bin/appclient.conf bin/*.xml bin/*.properties
 
 	insinto "${WILDFLY_HOME_DIR}/bin/client"
 	doins bin/client/*.jar
