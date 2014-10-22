@@ -12,8 +12,8 @@ WILDFLY_MODE="standalone"
 # The Wildfly instance to start.
 WILDFLY_INSTANCE="default"
 
-# Additional options to pass to the JVM
-WILDFLY_JAVA_OPTS="-server"
+# Options to pass to the JVM
+WILDFLY_JAVA_OPTS="-server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true"
 
 # Additional options to pass to the standalone server
 WILDFLY_STANDALONE_SERVER_OPTS=""
