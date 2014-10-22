@@ -1,0 +1,16 @@
+# ChangeLog for app-admin/sst-postgresql-utils
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*sst-postgresql-utils-0.0.2 (15 Apr 2013)
+
+  15 Apr 2013; Tiziano Müller <dev-zero@gentoo.org>
+  -sst-postgresql-utils-0.0.1.ebuild, +sst-postgresql-utils-0.0.2.ebuild:
+  Version bump to include forgotten wal-deletion script, drop old.
+
+*sst-postgresql-utils-0.0.1 (15 Apr 2013)
+
+  15 Apr 2013; Tiziano Müller <dev-zero@gentoo.org>
+  +sst-postgresql-utils-0.0.1.ebuild:
+  Initial commit
+
