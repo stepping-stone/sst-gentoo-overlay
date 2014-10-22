@@ -111,7 +111,8 @@ src_install() {
 		--java_args \
 			"\${JAVA_OPTS}
 			${java_args}
-			-Djboss.cli.config=${WILDFLY_CONF_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/jboss-cli.xml" \
+			-Djboss.cli.config=${WILDFLY_CONF_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/jboss-cli.xml
+			-Dlogging.configuration=file:${WILDFLY_CONF_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/jboss-cli-logging.properties" \
 		--pkg_args "-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.cli" \
 		-into "${WILDFLY_HOME_DIR}"
 
