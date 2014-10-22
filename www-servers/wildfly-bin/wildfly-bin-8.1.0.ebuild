@@ -89,7 +89,7 @@ src_install() {
 		--main org.jboss.modules.Main \
 		--java_args "\${JAVA_OPTS} ${java_args}" \
 		--pkg_args \
-			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.domain-add-user $@" \
+			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.domain-add-user" \
 		-into "${WILDFLY_HOME_DIR}"
 
 	# appclient.sh launcher
@@ -101,8 +101,7 @@ src_install() {
 			${java_args}
 		    -Dorg.jboss.boot.log.file=${WILDFLY_LOG_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/appclient.log
 			-Dlogging.configuration=file:${WILDFLY_CONF_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/appclient/logging.properties" \
-		--pkg_args \
-			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.appclient \$@" \
+		--pkg_args "-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.appclient" \
 		-into "${WILDFLY_HOME_DIR}"
 
 	# jboss-cli.sh launcher
@@ -112,9 +111,9 @@ src_install() {
 		--java_args \
 			"\${JAVA_OPTS}
 			${java_args}
-			-Djboss.cli.config=${WILDFLY_CONF_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/jboss-cli.xml" \
-		--pkg_args \
-			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.cli \$@" \
+			-Djboss.cli.config=${WILDFLY_CONF_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/jboss-cli.xml
+			-Dlogging.configuration=file:${WILDFLY_CONF_ROOT}/\${WILDFLY_INSTANCE:=${DEFAULT_INSTANCE_NAME}}/jboss-cli-logging.properties" \
+		--pkg_args "-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.cli" \
 		-into "${WILDFLY_HOME_DIR}"
 
 	# jdr.sh launcher
@@ -122,8 +121,7 @@ src_install() {
 		jdr.sh \
 		--main org.jboss.modules.Main \
 		--java_args "\${JAVA_OPTS} ${java_args}" \
-		--pkg_args \
-			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.jdr \$@" \
+		--pkg_args "-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.jdr" \
 		-into "${WILDFLY_HOME_DIR}"
 
 	# vault.sh launcher
@@ -131,8 +129,7 @@ src_install() {
 		vault.sh \
 		--main org.jboss.modules.Main \
 		--java_args "\${JAVA_OPTS} ${java_args}" \
-		--pkg_args \
-			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.vault-tool \$@" \
+		--pkg_args "-mp ${WILDFLY_HOME_DIR}/modules org.jboss.as.vault-tool" \
 		-into "${WILDFLY_HOME_DIR}"
 
 	# wsconsume.sh launcher
@@ -144,7 +141,7 @@ src_install() {
 			${java_args}
 			-Dprogram.name=wsconsume.sh" \
 		--pkg_args \
-			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.ws.tools.wsconsume \$@" \
+			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.ws.tools.wsconsume" \
 		-into "${WILDFLY_HOME_DIR}"
 
 	# wsprovide.sh launcher
@@ -156,7 +153,7 @@ src_install() {
 			${java_args}
 			-Dprogram.name=wsprovide.sh" \
 		--pkg_args \
-			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.ws.tools.wsprovide \$@" \
+			"-mp ${WILDFLY_HOME_DIR}/modules org.jboss.ws.tools.wsprovide" \
 		-into "${WILDFLY_HOME_DIR}"
 
 

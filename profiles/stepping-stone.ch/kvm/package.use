@@ -24,3 +24,10 @@ sys-apps/bleachbit -gtk
 
 # For the nullmailer setup we need sasl but no pam
 mail-mta/postfix sasl -pam
+
+# Disable perl support and the BDB Storage Engine in MySQL since we never needed it
+dev-db/mysql -berkdb -perl
+
+# Disable perl support since we never needed it
+# but enable extraengine support since it doesn't pull in anything else
+dev-db/mariadb -perl extraengine
