@@ -27,4 +27,7 @@ mail-mta/postfix sasl -pam
 
 # Disable perl support and the BDB Storage Engine in MySQL since we never needed it
 dev-db/mysql -berkdb -perl
-dev-db/mariadb -berkdb -perl
+
+# Disable perl support since we never needed it
+# but enable extraengine support since it doesn't pull in anything else
+dev-db/mariadb -perl extraengine
