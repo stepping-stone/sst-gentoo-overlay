@@ -50,7 +50,15 @@ depend() {
 
 start_pre() {
 
+    local jboss_modules_jar
+    jboss_modules_jar="$(java-config -p ${WILDFLY_NAME})"
+    if [ $? -ne 0 ] || test -z "${jboss_modules_jar}"; then
+        eerror "Unable to determine JBoss modules JAR path"
+        return 1
+    fi
+
     local mode="${WILDFLY_MODE}"
+
     case "${mode}" in
         standalone)
             local java_args="
@@ -63,7 +71,7 @@ start_pre() {
                 -Djboss.server.temp.dir=${WILDFLY_TMP_DIR}/${mode}
                 -Dorg.jboss.boot.log.file=${WILDFLY_LOG_DIR}/${mode}/server.log
                 -Dlogging.configuration=file:${WILDFLY_CONF_DIR}/${mode}/logging.properties
-		-jar \"/usr/share/${WILDFLY_NAME}/lib/jboss-modules.jar\"
+                -jar \"${jboss_modules_jar}\"
                 -mp \"${WILDFLY_MODULEPATH}\"
                 org.jboss.as.standalone
                 ${WILDFLY_STANDALONE_SERVER_OPTS}"
@@ -80,7 +88,7 @@ start_pre() {
                 -Djboss.domain.temp.dir=${WILDFLY_TMP_DIR}/${mode}
                 -Dorg.jboss.boot.log.file=${WILDFLY_LOG_DIR}/${mode}/process-controller.log
                 -Dlogging.configuration=file:${WILDFLY_CONF_DIR}/${mode}/logging.properties
-		-jar \"/usr/share/${WILDFLY_NAME}/lib/jboss-modules.jar\"
+                -jar \"${jboss_modules_jar}\"
                 -mp \"${WILDFLY_MODULEPATH}\" 
                 org.jboss.as.process-controller
                 --
