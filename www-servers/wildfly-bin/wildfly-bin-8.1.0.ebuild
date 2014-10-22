@@ -209,8 +209,14 @@ src_install() {
 
 	sed -i -e "s|@SLOT@|${SLOT}|g" "${D}/etc/conf.d/${PN}-${SLOT}" || \
 		die "SLOT pattern replacement failed"
+}
 
+pkg_postinst() {
 	einfo "To access the management console, add a user to the ManagementRealm:"
 	einfo "${WILDFLY_HOME_DIR}/bin/add-user.sh"
+	einfo ""
 	einfo "Afterwards you can access the console at http://localhost:9990"
+	einfo ""
+	einfo "The configuration is located at:"
+	einfo "${WILDFLY_DEFAULT_CONF_DIR}/[domain|standalone]"
 }
