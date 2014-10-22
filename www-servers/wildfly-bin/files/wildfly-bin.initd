@@ -1,0 +1,127 @@
+#!/sbin/runscript
+#
+# Copyright (C) 2014 stepping stone GmbH
+#                   Switzerland
+#                   http://www.stepping-stone.ch
+#                   support@stepping-stone.ch
+#
+# Authors:
+#  Christian Affolter <christian.affolter@stepping-stone.ch>
+#
+# This program is free software: you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public 
+# License as published  by the Free Software Foundation, version
+# 3 of the License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public
+# License along with this program.
+# If not, see <http://www.gnu.org/licenses/>.
+
+description="WildFly is a flexible, lightweight, managed application runtime"
+
+command="/usr/bin/java"
+
+command_background="true"
+pidfile="/run/wildfly-bin/${RC_SVCNAME}.pid"
+
+start_stop_daemon_args="--user ${WILDFLY_USER}:${WILDFLY_GROUP} \
+                        --make-pidfile \
+                        --progress \
+                        --wait 5000"
+
+retry="SIGTERM/180/SIGKILL/15"
+
+required_dirs="${WILDFLY_HOME_DIR}
+               ${WILDFLY_BASE_DIR}
+               ${WILDFLY_LOG_DIR}
+               ${WILDFLY_TMP_DIR}
+               ${WILDFLY_CONF_DIR}"
+
+depend() {
+    need net
+    after mysql postgresql
+    use dns logger
+}
+
+start_pre() {
+
+    local jboss_modules_jar
+    jboss_modules_jar="$(java-config -p ${WILDFLY_NAME})"
+    if [ $? -ne 0 ] || test -z "${jboss_modules_jar}"; then
+        eerror "Unable to determine JBoss modules JAR path"
+        return 1
+    fi
+
+    local mode="${WILDFLY_MODE}"
+
+    case "${mode}" in
+        standalone)
+            local java_args="
+                -D\"[Standalone]\"
+                ${WILDFLY_JAVA_OPTS}
+                -Djboss.home.dir=${WILDFLY_HOME_DIR}
+                -Djboss.server.base.dir=${WILDFLY_BASE_DIR}/${mode}
+                -Djboss.server.config.dir=${WILDFLY_CONF_DIR}/${mode}
+                -Djboss.server.log.dir=${WILDFLY_LOG_DIR}/${mode}
+                -Djboss.server.temp.dir=${WILDFLY_TMP_DIR}/${mode}
+                -Dorg.jboss.boot.log.file=${WILDFLY_LOG_DIR}/${mode}/server.log
+                -Dlogging.configuration=file:${WILDFLY_CONF_DIR}/${mode}/logging.properties
+                -jar \"${jboss_modules_jar}\"
+                -mp \"${WILDFLY_MODULEPATH}\"
+                org.jboss.as.standalone
+                ${WILDFLY_STANDALONE_SERVER_OPTS}"
+            ;;
+
+        domain)
+            local java_args="
+                -D\"[Process Controller]\"
+                ${WILDFLY_JAVA_OPTS} ${WILDFLY_PROCESS_CONTROLLER_JAVA_OPTS}
+                -Djboss.home.dir=${WILDFLY_HOME_DIR}
+                -Djboss.domain.base.dir=${WILDFLY_BASE_DIR}/${mode}
+                -Djboss.domain.config.dir=${WILDFLY_CONF_DIR}/${mode}
+                -Djboss.domain.log.dir=${WILDFLY_LOG_DIR}/${mode}
+                -Djboss.domain.temp.dir=${WILDFLY_TMP_DIR}/${mode}
+                -Dorg.jboss.boot.log.file=${WILDFLY_LOG_DIR}/${mode}/process-controller.log
+                -Dlogging.configuration=file:${WILDFLY_CONF_DIR}/${mode}/logging.properties
+                -jar \"${jboss_modules_jar}\"
+                -mp \"${WILDFLY_MODULEPATH}\" 
+                org.jboss.as.process-controller
+                --
+                -Dorg.jboss.boot.log.file=${WILDFLY_LOG_DIR}/${mode}/host-controller.log
+                -Dlogging.configuration=file:${WILDFLY_CONF_DIR}/${mode}/logging.properties
+                ${WILDFLY_JAVA_OPTS} ${WILDFLY_HOST_CONTROLLER_JAVA_OPTS}"
+                
+            ;;
+
+        *)
+            eerror "Invalid startup mode specified."
+            einfo "Set WILDFLY_MODE to either 'standalone' or 'domain'"
+            return 1
+            ;;
+    esac
+            
+    checkpath -d -m 0755 -o ${WILDFLY_USER}:${WILDFLY_GROUP} "/run/wildfly-bin"
+
+    checkpath -d -m 0755 \
+              -o ${WILDFLY_USER}:${WILDFLY_GROUP} \
+              "${WILDFLY_CONF_DIR}/${mode}"
+
+    checkpath -d -m 0755 \
+              -o ${WILDFLY_USER}:${WILDFLY_GROUP} \
+              "${WILDFLY_TMP_DIR}/${mode}"
+
+    checkpath -d -m 0755 \
+              -o ${WILDFLY_USER}:${WILDFLY_GROUP} \
+              "${WILDFLY_LOG_DIR}/${mode}"
+ 
+    command_args="${java_args}"
+}
+
+# The default runscript start() function will be used to start the service
+
+# The default runscript stop() function will be used to stop the service

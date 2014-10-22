@@ -1,0 +1,63 @@
+# /etc/conf.d/wildfly: config file for /etc/init.d/wildfly-bin
+
+# The user under which the Wildfly server will be started
+WILDFLY_USER="wildfly"
+
+# The group under which the Wildfly server will be started
+WILDFLY_GROUP="wildfly"
+
+# The Wildfly startup mode, either standalone or domain
+WILDFLY_MODE="standalone"
+
+# The Wildfly instance to start.
+WILDFLY_INSTANCE="default"
+
+# Options to pass to the JVM
+WILDFLY_JAVA_OPTS="-server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true"
+
+# Additional options to pass to the standalone server
+WILDFLY_STANDALONE_SERVER_OPTS=""
+
+# Additional options to pass to the process controller JVM (in domain mode)
+WILDFLY_PROCESS_CONTROLLER_JAVA_OPTS=""
+
+# Additional options to pass to the host controller JVM (in domain mode)
+WILDFLY_HOST_CONTROLLER_JAVA_OPTS=""
+
+
+# Normally, you don't need/want to change any of the options below.
+#
+# The Wildfly name, including the slot
+WILDFLY_NAME="wildfly-bin-@SLOT@"
+
+# The Wildfly home directory
+# Will be set to:
+#   jboss.home.dir=${WILDFLY_HOME_DIR}
+WILDFLY_HOME_DIR="/opt/${WILDFLY_NAME}"
+
+# The Wildfly server/domain base root directory
+# Will be set to:
+#   jboss.server.base.dir=${WILDFLY_BASE_DIR}/${WILDFLY_MODE}
+#   jboss.domain.base.dir=${WILDFLY_BASE_DIR}/${WILDFLY_MODE}
+WILDFLY_BASE_DIR="/var/lib/${WILDFLY_NAME}/${WILDFLY_INSTANCE}"
+
+# The Wildfly server/domain configuration root directory
+# Will be set to:
+#   jboss.server.config.dir=${WILDFLY_CONF_DIR}/${WILDFLY_MODE}
+#   jboss.domain.config.dir=${WILDFLY_CONF_DIR}/${WILDFLY_MODE}
+WILDFLY_CONF_DIR="/etc/${WILDFLY_NAME}/${WILDFLY_INSTANCE}"
+
+# The Wildfly server/domain log root directory
+# Will be set to:
+#   jboss.server.log.dir=${WILDFLY_LOG_DIR}/${WILDFLY_MODE}
+#   jboss.domain.log.dir=${WILDFLY_LOG_DIR}/${WILDFLY_MODE}
+WILDFLY_LOG_DIR="/var/log/${WILDFLY_NAME}/${WILDFLY_INSTANCE}"
+
+# The Wildfly server/domain temporary root directory
+# Will be set to:
+#   jboss.server.temp.dir=${WILDFLY_TMP_DIR}/${WILDFLY_MODE}
+#   jboss.domain.temp.dir=${WILDFLY_TMP_DIR}/${WILDFLY_MODE}
+WILDFLY_TMP_DIR="/var/tmp/${WILDFLY_NAME}/${WILDFLY_INSTANCE}"
+
+# The path to all modules shipped with Wildfly
+WILDFLY_MODULEPATH="${WILDFLY_HOME_DIR}/modules"
