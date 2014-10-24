@@ -48,3 +48,6 @@ dev-lang/php fpm
 app-admin/eselect-php fpm
 # Enable common database support and LDAP (which unfortunately pulls in the respective dependencies)
 dev-lang/php ldap ldap-sasl mysql mysqli postgres
+
+# Enable since it does not generate additional dependencies and is commonly used on OpenLDAP installations
+net-nds/openldap overlays
