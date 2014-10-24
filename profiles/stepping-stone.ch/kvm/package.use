@@ -31,3 +31,23 @@ dev-db/mysql -berkdb -perl
 # Disable perl support since we never needed it
 # but enable extraengine support since it doesn't pull in anything else
 dev-db/mariadb -perl extraengine
+
+# The following list enables at least the USE flags to bring the default PHP installation
+# to the same level as Debian PHP (php5-cgi/cgi/fpm), aka the COMMON_CONFIG
+# in http://anonscm.debian.org/cgit/pkg-php/php.git/tree/debian/rules
+# Plus it restores PHP upstreams default (for flags which are enable by default at upstream
+# and therefore also enabled in a Debian installation, but for some reason not enabled by default in Gentoo).
+dev-lang/php -gdbm bcmath berkdb bzip2 calendar cdb ctype exif fileinfo filter flatfile ftp hash iconv inifile intl ipv6 json mhash nls opcache posix qdbm session sharedmem simplexml soap sockets ssl sysvipc tokenizer unicode wddx xml xmlreader xmlwriter zip zlib
+# the following fixes the Gentoo USE flag restrictions imposed by the selection above
+dev-lang/php cli gd
+# enable more (0 to low-dep) packages which are usually installed as separate modules in other distros
+# or built only for certain SAPIs
+dev-lang/php crypt curl gmp imap pcntl pdo phar readline sqlite xmlrpc xslt
+# Enable the php-fpm SAPI as our default SAPI
+dev-lang/php fpm
+app-admin/eselect-php fpm
+# Enable common database support and LDAP (which unfortunately pulls in the respective dependencies)
+dev-lang/php ldap ldap-sasl mysql mysqli postgres
+
+# Enable since it does not generate additional dependencies and is commonly used on OpenLDAP installations
+net-nds/openldap overlays
