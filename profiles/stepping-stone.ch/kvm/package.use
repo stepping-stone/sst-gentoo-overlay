@@ -42,7 +42,7 @@ dev-lang/php -gdbm bcmath berkdb bzip2 calendar cdb ctype exif fileinfo filter f
 dev-lang/php cli gd
 # enable more (0 to low-dep) packages which are usually installed as separate modules in other distros
 # or built only for certain SAPIs
-dev-lang/php crypt curl imap pcntl pdo phar readline sqlite xmlrpc xslt
+dev-lang/php crypt curl gmp imap pcntl pdo phar readline sqlite xmlrpc xslt
 # Enable the php-fpm SAPI as our default SAPI
 dev-lang/php fpm
 app-admin/eselect-php fpm
