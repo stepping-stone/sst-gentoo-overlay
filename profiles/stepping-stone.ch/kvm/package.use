@@ -46,3 +46,5 @@ dev-lang/php crypt curl imap pcntl pdo phar readline sqlite xmlrpc xslt
 # Enable the php-fpm SAPI as our default SAPI
 dev-lang/php fpm
 app-admin/eselect-php fpm
+# Enable common database support and LDAP (which unfortunately pulls in the respective dependencies)
+dev-lang/php ldap ldap-sasl mysql mysqli postgres
