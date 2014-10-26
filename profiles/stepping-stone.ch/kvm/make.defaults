@@ -25,6 +25,9 @@ LINGUAS="de fr it"
 # this is enough for kvm platforms
 GRUB_PLATFORMS="pc"
 
+# Make the PHP ebuild install the production version of the php.ini by default
+PHP_INI_VERSION="production"
+
 # Configure portage to log via syslog and directly to the terminal
 PORTAGE_ELOG_CLASSES="info warn error log"
 PORTAGE_ELOG_SYSTEM="echo syslog"
