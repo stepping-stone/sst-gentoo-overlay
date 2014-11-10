@@ -42,7 +42,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	local major_minor_version="$(get_version_component_range "1-2" "$MV_PV")"
+	local major_minor_version="$(get_version_component_range "1-2")"
 
 	epatch "${FILESDIR}/pgpool_run_paths-${major_minor_version}.patch"
 
