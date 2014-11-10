@@ -24,7 +24,7 @@ get_config() {
 PIDFILE="$(get_config pid_file_name)"
 : ${PIDFILE:='/run/pgpool/pgpool.pid'}
 
-prep() {
+start_pre() {
     # $logdir contains status file(s), not log files.
     local logdir=$(get_config logdir)
     local socket_dir=$(get_config socket_dir)
@@ -40,8 +40,6 @@ prep() {
 }
 
 start() {
-    prep || return 1
-
     ebegin "Starting pgpool2"
 
     start-stop-daemon --start \

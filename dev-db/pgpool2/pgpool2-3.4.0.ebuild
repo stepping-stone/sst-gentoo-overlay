@@ -1,12 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/pgpool2/pgpool2-3.3.3.ebuild,v 1.2 2014/11/03 11:29:08 titanofold Exp $
+# $Header: $
 
 EAPI=5
 
 MY_P="${PN/2/-II}-${PV}"
 
-inherit base user versionator
+inherit autotools-utils user versionator
 
 DESCRIPTION="Connection pool server for PostgreSQL"
 HOMEPAGE="http://www.pgpool.net/"
@@ -18,18 +18,19 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE="memcached pam ssl static-libs"
 
-RDEPEND="
-	virtual/postgresql
+RDEPEND="virtual/postgresql
 	memcached? ( dev-libs/libmemcached )
 	pam? ( sys-auth/pambase )
-	ssl? ( dev-libs/openssl )
-"
+	ssl? ( dev-libs/openssl )"
 DEPEND="${RDEPEND}
 	sys-devel/bison
-	!!dev-db/pgpool
-"
+	!!dev-db/pgpool"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
+
+PATCHES=( "${FILESDIR}/pgpool_run_paths-$(get_version_component_range 1-2).patch" )
+HTML_DOCS=( doc/ )
+DOCS=( NEWS TODO doc/where_to_send_queries.{pdf,odg} )
 
 pkg_setup() {
 	enewgroup postgres 70
@@ -42,9 +43,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	local major_minor_version="$(get_version_component_range "1-2")"
-
-	epatch "${FILESDIR}/pgpool_run_paths-${major_minor_version}.patch"
+	autotools-utils_src_prepare
 
 	local pg_config_manual="$(pg_config --includedir)/pg_config_manual.h"
 	local pgsql_socket_dir=$(grep DEFAULT_PGSOCKET_DIR "${pg_config_manual}" | \
@@ -59,52 +58,33 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
-	use memcached && \
-		myconf="--with-memcached=\"${EROOT%/}/usr/include/libmemcached\""
-	use pam && myconf+=' --with-pam'
-
-	econf \
+	local myeconfargs=(
 		--disable-rpath \
 		--sysconfdir="${EROOT%/}/etc/${PN}" \
 		$(use_with ssl openssl) \
 		$(use_enable static-libs static) \
-		${myconf}
+	)
+
+	use memcached && myeconfargs+=("--with-memcached=\"${EROOT%/}/usr/include/libmemcached\"")
+	use pam && myconf+=('--with-pam')
+
+	autotools-utils_src_configure
 }
 
 src_compile() {
-	emake
-
-	emake -C src/sql
+	autotools-utils_src_compile
+	autotools-utils_src_compile -C src/sql
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-
-	emake DESTDIR="${D}" -C src/sql install
-	cd "${S}"
-
-	# 3.3 appears to have removed this
-	# `contrib' moved to `extension' with PostgreSQL 9.1
-	#local pgslot=$(postgresql-config show)
-	#if [[ ${pgslot//.} > 90 ]] ; then
-	#	cd "${ED%/}$(pg_config --sharedir)"
-	#	mv contrib extension || die
-	#	cd "${S}"
-	#fi
+	autotools-utils_src_install
+	autotools-utils_src_install -C src/sql 
 
 	newinitd "${FILESDIR}/${PN}.initd" ${PN}
 	newconfd "${FILESDIR}/${PN}.confd" ${PN}
-
-	# Documentation
-	dodoc NEWS TODO doc/where_to_send_queries.{pdf,odg}
-	dohtml -r doc
 
 	# Examples and extras
 	insinto "/usr/share/${PN}"
 	doins doc/{pgpool_remote_start,basebackup.sh,recovery.conf.sample}
 	mv "${ED%/}/usr/share/${PN/2/-II}" "${ED%/}/usr/share/${PN}" || die
-
-	# One more thing: Evil la files!
-	find "${ED}" -name '*.la' -exec rm -f {} +
 }
