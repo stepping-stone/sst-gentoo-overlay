@@ -29,7 +29,7 @@ RDEPEND="dev-perl/Config-IniFiles
 	dev-perl/Net-OpenSSH
 	dev-perl/Text-CSV
 	dev-perl/IO-String
-	virtual/perl-Switch"
+	dev-perl/Switch"
 
 S="${WORKDIR}/${MY_P}"
 
