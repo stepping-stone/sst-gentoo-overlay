@@ -22,7 +22,7 @@ RDEPEND="${PYTHON_DEPS}"
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}/${P}-ldflags.patch" \
+		"${FILESDIR}/${PN}-2.16-ldflags.patch" \
 		"${FILESDIR}/${P}-python.patch" \
 		"${FILESDIR}/${P}-noshells.patch"
 	eautoreconf
