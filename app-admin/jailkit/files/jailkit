@@ -1,0 +1,12 @@
+#!/sbin/runscript
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+description="A daemon to create a rate-limited /dev/log socket inside a chroot"
+
+command="/usr/sbin/jk_socketd"
+
+depend() {
+	use logger
+}
