@@ -6,6 +6,10 @@
 description="A daemon to create a rate-limited /dev/log socket inside a chroot"
 
 command="/usr/sbin/jk_socketd"
+pidfile="/var/run/${SVCNAME}.pid"
+command_args="--pidfile=${pidfile}"
+
+required_files="/etc/jailkit/jk_socketd.ini"
 
 depend() {
 	use logger
