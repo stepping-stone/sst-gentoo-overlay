@@ -25,3 +25,7 @@ app-vim/puppet-syntax amd64
 
 # quota-4 is available for a long time now (and quota-3 ldap support is broken)
 =sys-fs/quota-4* amd64
+
+# we need an up-to-date version of xfsprogs (3.1 is from 2013) where several bugs
+# in xfs_repair and xfs_quota are finally fixed.
+=sys-fs/xfsprogs-3.2*
