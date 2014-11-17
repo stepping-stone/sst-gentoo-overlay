@@ -22,3 +22,6 @@ app-vim/puppet-syntax amd64
 =www-servers/apache-2.4* amd64
 =app-admin/apache-tools-2.4* amd64
 =dev-libs/apr-1.5* amd64
+
+# quota-4 is available for a long time now (and quota-3 ldap support is broken)
+=sys-fs/quota-4* amd64
