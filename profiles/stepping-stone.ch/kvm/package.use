@@ -1,5 +1,8 @@
 net-analyzer/zabbix agent -sqlite3
 
+# Continue to install nscd everywhere even if optional
+sys-libs/glibc nscd
+
 # need LVM for disk layout created after September 2013,
 # but disable obsolete lvm1 support, and thin provisioning
 # which pulls in dev-libs/boost
