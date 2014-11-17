@@ -28,4 +28,4 @@ app-vim/puppet-syntax amd64
 
 # we need an up-to-date version of xfsprogs (3.1 is from 2013) where several bugs
 # in xfs_repair and xfs_quota are finally fixed.
-=sys-fs/xfsprogs-3.2*
+=sys-fs/xfsprogs-3.2* amd64
