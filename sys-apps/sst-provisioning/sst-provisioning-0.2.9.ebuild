@@ -1,8 +1,8 @@
-# Copyright 1999-2013 stepping stone GmbH, Switzerland
+# Copyright 1999-2014 stepping stone GmbH, Switzerland
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 inherit perl-module
 
@@ -28,8 +28,7 @@ RDEPEND="dev-perl/Config-IniFiles
 	dev-perl/Net-SMTPS
 	dev-perl/Net-OpenSSH
 	dev-perl/Text-CSV
-	dev-perl/IO-String
-	dev-perl/Switch"
+	dev-perl/IO-String"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -37,7 +36,7 @@ S="${WORKDIR}/${MY_P}"
 # * Crypt-GeneratePassword dependency missing for Provisioning/lib/Provisioning/Groupware/OX/OXAccount.pm
 
 src_install() {
-	insinto ${VENDOR_LIB}
+	insinto "${VENDOR_LIB}"
 	doins -r lib/Provisioning
 
 	dobin bin/*.pl
