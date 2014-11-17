@@ -11,6 +11,10 @@ sys-fs/lvm2 -lvm1 -thin
 # install a minimal git for now
 dev-vcs/git -gpg -perl -python
 
+# Enable python scripting support in vim since we have python installed anyway
+# and it is required in several useful vim plugins (like syntastic, ultisnips and YCM)
+app-editors/vim python
+
 # eix is required for puppet and gets executed several times,
 # enable optimization to make that (hopefully) faster
 app-portage/eix optimization
