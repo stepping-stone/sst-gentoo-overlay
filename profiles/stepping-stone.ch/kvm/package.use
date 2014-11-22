@@ -1,5 +1,8 @@
 net-analyzer/zabbix agent -sqlite3
 
+# Continue to install nscd everywhere even if optional
+sys-libs/glibc nscd
+
 # need LVM for disk layout created after September 2013,
 # but disable obsolete lvm1 support, and thin provisioning
 # which pulls in dev-libs/boost
@@ -7,6 +10,10 @@ sys-fs/lvm2 -lvm1 -thin
 
 # install a minimal git for now
 dev-vcs/git -gpg -perl -python
+
+# Enable python scripting support in vim since we have python installed anyway
+# and it is required in several useful vim plugins (like syntastic, ultisnips and YCM)
+app-editors/vim python
 
 # eix is required for puppet and gets executed several times,
 # enable optimization to make that (hopefully) faster
@@ -56,5 +63,6 @@ net-nds/openldap overlays
 # * enable threads and the worker MPM
 # * enable additional proxy modules used in our deployments
 # * use the Gentoo default for everything else
-=www-servers/apache-2.4* threads apache2_mpms_worker
+=dev-libs/apr-util-1.5* ldap
+=www-servers/apache-2.4* ldap threads apache2_mpms_worker
 =www-servers/apache-2.4* apache2_modules_proxy apache2_modules_proxy_ajp apache2_modules_proxy_fcgi apache2_modules_proxy_http apache2_modules_proxy_scgi apache2_modules_proxy_wstunnel
