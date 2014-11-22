@@ -25,3 +25,6 @@ app-vim/puppet-syntax amd64
 
 # quota-4 is available for a long time now (and quota-3 ldap support is broken)
 =sys-fs/quota-4* amd64
+
+# force php-5.6* stable
+dev-lang/php:5.6 amd64
