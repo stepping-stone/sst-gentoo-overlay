@@ -4,13 +4,26 @@
 
 EAPI=5
 
-MY_P="${PN/2/-II}-${PV}"
-
 inherit base user versionator
 
 DESCRIPTION="Connection pool server for PostgreSQL"
 HOMEPAGE="http://www.pgpool.net/"
-SRC_URI="http://www.pgpool.net/download.php?f=${MY_P}.tar.gz -> ${MY_P}.tar.gz"
+
+if [ "${PV}" == "9999" ] || [ "$(get_version_component_range 3)" == "9999"  ]
+then
+	inherit git-r3
+	EGIT_REPO_URI="http://git.postgresql.org/git/pgpool2.git"
+
+	if [ "${PV}" != "9999" ]; then
+		EGIT_BRANCH="V$(get_major_version)_$(get_version_component_range 2)_STABLE"
+		EGIT_MIN_CLONE_TYPE="mirror"
+	fi
+else
+	MY_P="${PN/2/-II}-${PV}"
+	SRC_URI="http://www.pgpool.net/download.php?f=${MY_P}.tar.gz -> ${MY_P}.tar.gz"
+	S=${WORKDIR}/${MY_P}
+fi
+
 LICENSE="BSD"
 SLOT="0"
 
@@ -29,7 +42,6 @@ DEPEND="${RDEPEND}
 	!!dev-db/pgpool
 "
 
-S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	enewgroup postgres 70
