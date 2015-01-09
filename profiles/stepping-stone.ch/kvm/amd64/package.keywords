@@ -15,6 +15,7 @@ app-vim/puppet-syntax amd64
 
 # force version 5.6.x/10.0.x of MySQL/MariaDB stable since stable at upstream
 =dev-db/mariadb-10.0* amd64
+=dev-db/mariadb-galera-10.0* amd64
 =dev-db/mysql-5.6* amd64
 ~virtual/mysql-5.6 amd64
 
