@@ -32,3 +32,6 @@ dev-lang/php:5.6 amd64
 
 # force LTS jenkins-bin stable
 dev-util/jenkins-bin:lts amd64
+
+# we always want latest&greatest, also recommended by upstream
+sys-fs/xfsprogs amd64
