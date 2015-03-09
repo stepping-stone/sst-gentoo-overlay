@@ -35,8 +35,8 @@ src_install() {
 	dobin "scripts/nrsysmond-config"
 	newbin "daemon/nrsysmond.${arch}" "nrsysmond"
 
-    newinitd "${FILESDIR}"/newrelic-sysmond.initd newrelic-sysmond
-    newconfd "${FILESDIR}"/newrelic-sysmond.confd newrelic-sysmond
+	newinitd "${FILESDIR}"/newrelic-sysmond.initd newrelic-sysmond
+	newconfd "${FILESDIR}"/newrelic-sysmond.confd newrelic-sysmond
 
 	keepdir "/etc/newrelic"
 	insinto "/etc/newrelic"
@@ -46,13 +46,13 @@ src_install() {
 	fowners root:newrelic /etc/newrelic/nrsysmond.cfg
 	fperms 0640 /etc/newrelic/nrsysmond.cfg
 
-    # Gentoo places PIDs below /run
-    sed -i \
-        -e "s|^#\?\(pidfile\)=.*|\1=/run/newrelic/nrsysmond.pid|" \
-        "${D}"/etc/newrelic/nrsysmond.cfg || die "Sed failed"
+	# Gentoo places PIDs below /run
+	sed -i \
+		-e "s|^#\?\(pidfile\)=.*|\1=/run/newrelic/nrsysmond.pid|" \
+		"${D}"/etc/newrelic/nrsysmond.cfg || die "Sed failed"
 
-    insinto /etc/logrotate.d
-    newins "${FILESDIR}"/newrelic.logrotate newrelic
+	insinto /etc/logrotate.d
+	newins "${FILESDIR}"/newrelic.logrotate newrelic
 
 	diropts -o newrelic -g newrelic
 	keepdir "/var/log/newrelic"
