@@ -1,0 +1,13 @@
+# /etc/conf.d/newrelic-sysmond: config file for /etc/init.d/newrelic-sysmond
+
+# Path to the newreilc sysmond configuration file
+NEWRELIC_SYSMOND_CONFIG="/etc/newrelic/nrsysmond.cfg"
+
+# User under which the newrelic sysmond will run
+NEWRELIC_SYSMOND_USER="newrelic"
+
+# Group under which the newrelic sysmond will run
+NEWRELIC_SYSMOND_GROUP="newrelic"
+
+# Additional newrelic sysmond options to pass
+NEWRELIC_SYSMOND_OPTS=""

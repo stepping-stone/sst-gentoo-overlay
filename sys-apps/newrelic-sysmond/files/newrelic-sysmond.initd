@@ -1,0 +1,33 @@
+#!/sbin/runscript
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="New Relic System Monitor"
+command="/opt/newrelic/bin/nrsysmond"
+command_args="-c ${NEWRELIC_SYSMOND_CONFIG} \
+              ${NEWRELIC_SYSMOND_OPTS}"
+
+pidfile="/run/newrelic/nrsysmond.pid"
+
+start_stop_daemon_args="--user ${NEWRELIC_SYSMOND_USER}:${NEWRELIC_SYSMOND_GROUP}"
+
+retry="SIGTERM/180/SIGKILL/15"
+
+required_files="${NEWRELIC_SYSMOND_CONFIG}"
+
+depend() {
+	use net
+}
+
+start_pre() {
+    # Ensure that the PID directory is available
+    checkpath --directory \
+          --mode 0775 \
+              --owner ${NEWRELIC_SYSMOND_USER}:${NEWRELIC_SYSMOND_GROUP} \
+              "/run/newrelic"
+
+}
+
+# The default runscript start() function will be used to start the service
+
+# The default runscript stop() function will be used to start the service

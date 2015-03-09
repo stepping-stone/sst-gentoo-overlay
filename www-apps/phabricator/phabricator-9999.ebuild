@@ -26,7 +26,7 @@ RDEPEND="dev-vcs/arcanist
 src_install() {
 	webapp_src_preinst
 	
-	dodoc README NOTICE
+	dodoc README.md NOTICE
 
 	cp -R \
 		bin conf externals resources scripts src support webroot \
