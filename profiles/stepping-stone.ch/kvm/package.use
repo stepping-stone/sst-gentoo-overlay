@@ -19,9 +19,9 @@ app-editors/vim python
 # enable optimization to make that (hopefully) faster
 app-portage/eix optimization
 
-# we want to be able to modify single values in config fiels
-# and creating/modifying users
-app-admin/puppet augeas shadow
+# we want to be able to modify single values in config files,
+# creating/modifying users and get a nice diff output
+app-admin/puppet augeas shadow diff minimal
 
 # eix pulls in sqlite anyway, furthermore it is required for bleachbit
 dev-lang/python sqlite
