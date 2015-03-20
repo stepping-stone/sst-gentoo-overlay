@@ -8,7 +8,6 @@ GENTOO_MIRRORS="https://mirror.stepping-stone.ch/public/gentoo http://mirror.swi
 
 # bash-completion: you do like less-typing, don't you?
 # caps: services can drop their priviliges
-# mmx, sse, sse2: we are running x86_64, this is standard
 # unicode: you never know when you encounter umlaute
 # xattr: support for extended attributes, to store caps-configuration, selinux-labels, etc.
 # vim-syntax: vim is our main editor, yes, we want highlighting wherever possible
@@ -17,7 +16,7 @@ GENTOO_MIRRORS="https://mirror.stepping-stone.ch/public/gentoo http://mirror.swi
 # -X: certain packages have USE=+X set (java, I'm looking at you)... ignore that
 # -ruby_targets_ruby19: the RUBY_TARGETS USE_EXPAND var is set to contain both ruby19 and ruby20,
 #                       but since puppet works with ruby20 we do not need ruby19 and we can't override RUBY_TARGETS in this make.defaults
-USE="${USE} bash-completion caps mmx sse sse2 unicode xattr vim-syntax -alsa -cups -tcpd -X -ruby_targets_ruby19"
+USE="${USE} bash-completion caps unicode xattr vim-syntax -alsa -cups -tcpd -X -ruby_targets_ruby19"
 
 # obsoletes localepurge
 LINGUAS="de fr it"
