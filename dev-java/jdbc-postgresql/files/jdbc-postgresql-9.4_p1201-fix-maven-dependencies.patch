@@ -1,0 +1,12 @@
+diff -ru postgresql-jdbc-9.4-1201.src.orig/build.xml postgresql-jdbc-9.4-1201.src/build.xml
+--- postgresql-jdbc-9.4-1201.src.orig/build.xml	2015-02-18 17:44:58.000000000 +0100
++++ postgresql-jdbc-9.4-1201.src/build.xml	2015-03-23 12:08:16.258496844 +0100
+@@ -117,7 +117,7 @@
+ 
+   <property name="waffle-jna.version" value="1.7" />
+ 
+-  <target name="maven-dependencies" depends="check_versions">
++  <target name="maven-dependencies" depends="check_versions,snapshot-version">
+     <!--
+          This is all maven-ant-tasks dependency declaration code.
+          See http://maven.apache.org/ant-tasks/reference.html
