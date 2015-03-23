@@ -44,7 +44,6 @@ JAVA_ANT_REWRITE_CLASSPATH="yes"
 EANT_DOC_TARGET="publicapi"
 
 src_compile() {
-	ANT_TASKS="all"
 	java-pkg-2_src_compile
 
 	# There is a task that creates this doc but I didn't find a way how to use system catalog
