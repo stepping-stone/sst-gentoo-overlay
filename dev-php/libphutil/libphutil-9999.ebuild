@@ -23,7 +23,7 @@ src_prepare() {
 }
 
 src_compile() {
-	emake -C support/xhpast/
+	emake -j1 -C support/xhpast/
 }
 
 src_install() {
@@ -33,7 +33,7 @@ src_install() {
 	doins -r scripts/example
 	rm -r scripts/example
 
-	dodoc README
+	dodoc README.md
 
 	insinto /usr/share/php/libphutil
 	doins -r externals scripts src
