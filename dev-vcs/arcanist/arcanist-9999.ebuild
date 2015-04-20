@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,7 +25,7 @@ RDEPEND="dev-lang/php
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 src_install() {
-	dodoc README
+	dodoc README.md
 
 	newbashcomp resources/shell/bash-completion ${PN}
 	rm -r resources/shell || die
