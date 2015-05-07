@@ -1,0 +1,40 @@
+#!/sbin/runscript
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+PIDDIR="/var/run/puppetdb"
+PIDFILE="${PIDDIR}/puppetdb.pid"
+PUPPETDB_LOG_DIR="/var/log/puppetdb"
+
+depend() {
+        need localmount
+        provide puppetdb
+        use syslog
+        after postgresql
+}
+
+start_pre() {
+        checkpath -d -m 0750 -o puppetdb:puppetdb ${PUPPETDB_LOG_DIR}
+        checkpath -d -m 0750 -o puppetdb:puppetdb ${PIDDIR}
+}
+
+start() {
+        ebegin "Starting puppetdb"
+                start-stop-daemon --start \
+                --pidfile ${PIDFILE} --make-pidfile \
+                --quiet --background \
+                --user puppetdb --group puppetdb \
+                --exec /usr/bin/java -- -cp \
+                       /usr/share/puppetdb/puppetdb.jar clojure.main -m \
+                       com.puppetlabs.puppetdb.core services -c \
+                       /etc/puppetdb/conf.d
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping puppetdb"
+                start-stop-daemon --stop --quiet \
+                --pidfile ${PIDFILE}
+        eend $?
+}
