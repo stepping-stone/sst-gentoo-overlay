@@ -15,7 +15,7 @@ SRC_URI="https://github.com/puppetlabs/puppetdb/archive/${RPV}.tar.gz"
 
 LICENSE="Apache-2.0 GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~x86"
+KEYWORDS="amd64 x86"
 IUSE="+terminus"
 
 DEPEND="${DEPEND}
@@ -67,6 +67,7 @@ each_ruby_install() {
         export CLASSPATH='/usr/share/clojure-1.6/lib/clojure.jar:/usr/share/java/leiningen-2.5.0-standalone.jar'
         /usr/bin/rake install DESTDIR="${D}" || die "Install failed"
         mkdir ${D}/etc/conf.d
+        cp ${FILESDIR}/puppetdb.confd ${D}/etc/conf.d/puppetdb || die "Install init script failed"
         cp ${FILESDIR}/puppetdb.initd ${D}/etc/init.d/puppetdb || die "Install init script failed"
         fowners ${PUPPETDB_USER}:${PUPPETDB_GROUP} \
             /etc/puppetdb/{,logback.xml} \
@@ -81,7 +82,7 @@ each_ruby_install() {
             /etc/puppetdb/conf.d/database.ini \
             /etc/puppetdb/conf.d/jetty.ini \
             /etc/puppetdb/conf.d/repl.ini
-        
+ 
         if use terminus; then
         	doruby -r puppet/lib/puppet
         fi
