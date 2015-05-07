@@ -22,7 +22,7 @@ app-vim/puppet-syntax amd64
 
 # MariaDB Galera
 =sys-cluster/galera-25.3* amd64
-=dev-cpp/1.4.8-r1 ~amd64
+=dev-cpp/asio-1.4.8-r1 ~amd64
 
 # consider apache-2.4 stable since upstream has it stable
 =www-servers/apache-2.4* amd64
