@@ -34,3 +34,10 @@ src_install() {
 
     dodoc README.md
 }
+
+pkg_postinst() {
+    chown root:zabbix \
+        "${ROOT}"/etc/zabbix/zabbix_agentd.d
+    chmod 750 \
+        "${ROOT}"/etc/zabbix/zabbix_agentd.d
+}
