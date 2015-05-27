@@ -11,6 +11,3 @@ DESCRIPTION="XML parsing class based on PHP's bundled expat"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64"
-
-DEPEND=">=dev-lang/php-4.2.0:*"
-RDEPEND="${DEPEND}"

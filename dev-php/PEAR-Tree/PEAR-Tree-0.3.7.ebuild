@@ -12,7 +12,6 @@ LICENSE="PHP-3.01"
 SLOT="0"
 KEYWORDS="amd64"
 
-DEPEND=">=dev-lang/php-4.3.0:*
-	>=dev-php/PEAR-DB-1.7.11
+DEPEND=">=dev-php/PEAR-DB-1.7.11
 	>=dev-php/PEAR-XML_Parser-1.2.8"
 RDEPEND="${DEPEND}"

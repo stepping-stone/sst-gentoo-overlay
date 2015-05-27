@@ -12,7 +12,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64"
 
-DEPEND=">=dev-lang/php-5.2.0:*
-	dev-lang/php:*[curl,fileinfo,zlib,ssl]
+DEPEND="dev-lang/php:*[curl,fileinfo,zlib,ssl]
 	>=dev-php/PEAR-Net_URL2-2.0.0"
 RDEPEND="${DEPEND}"

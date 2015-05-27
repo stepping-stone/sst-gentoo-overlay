@@ -12,5 +12,5 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64"
 
-DEPEND=">=dev-lang/php-4.0.0:*[gd]"
+DEPEND="dev-lang/php:*[gd]"
 RDEPEND="${DEPEND}"

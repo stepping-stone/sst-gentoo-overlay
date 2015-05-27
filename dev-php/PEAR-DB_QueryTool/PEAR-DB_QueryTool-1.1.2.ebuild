@@ -12,7 +12,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64"
 
-RPEPEND=">=dev-lang/php-4.0.0
-	dev-php/PEAR-DB
+RPEPEND="dev-php/PEAR-DB
 	>=dev-php/PEAR-Log-1.7"
 RDEPEND="${DEPEND}"

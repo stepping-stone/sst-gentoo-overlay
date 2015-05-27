@@ -12,7 +12,6 @@ LICENSE="PHP-3.01"
 SLOT="0"
 KEYWORDS="amd64"
 
-DEPEND=">=dev-lang/php-5.0.0:*
-	>=dev-php/PEAR-HTTP_Request2-2.0.0
+DEPEND=">=dev-php/PEAR-HTTP_Request2-2.0.0
 	>=dev-php/PEAR-Cache_Lite-1.6.0"
 RDEPEND="${DEPEND}"

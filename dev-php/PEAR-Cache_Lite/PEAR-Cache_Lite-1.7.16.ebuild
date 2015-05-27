@@ -11,6 +11,3 @@ DESCRIPTION="Fast and Safe little cache system"
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="amd64"
-
-DEPEND=">=dev-lang/php-4.0.0:*"
-RDEPEND="${DEPEND}"
