@@ -10,8 +10,7 @@ DESCRIPTION="Manage and handles color data and conversions"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
-IUSE=""
+KEYWORDS="amd64"
 
 DEPEND=">=dev-lang/php-4.0.0:*[gd]"
 RDEPEND="${DEPEND}"

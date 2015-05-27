@@ -10,7 +10,7 @@ DESCRIPTION="Visualization of GIS data"
 
 LICENSE="PHP-3.01"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64"
 
 DEPEND=">=dev-lang/php-4.0.0:*[gd]
 	dev-php/PEAR-Cache_Lite
