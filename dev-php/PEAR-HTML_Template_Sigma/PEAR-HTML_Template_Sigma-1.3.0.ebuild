@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2015 stepping stone GmbH, Switzerland
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,7 @@ DESCRIPTION="An implementation of Integrated Templates API with template 'compil
 
 LICENSE="PHP-3.01"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64"
 
-DEPEND=">=dev-lang/php-4.3.0:*[ctype]"
+DEPEND="dev-lang/php:*[ctype]"
 RDEPEND="${DEPEND}"
