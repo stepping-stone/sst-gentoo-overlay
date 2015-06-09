@@ -38,10 +38,10 @@ dev-db/mysql -berkdb -perl
 # Disable perl support since we never needed it
 # but enable extraengine support since it doesn't pull in anything else
 dev-db/mariadb -perl extraengine
-
-# Disable perl support since we never needed it
-# but enable extraengine support since it doesn't pull in anything else
 dev-db/mariadb-galera -perl extraengine
+
+# Use sst-xtrabackup by default
+dev-db/mariadb-galera sst-xtrabackup -sst-rsync
 
 # The following list enables at least the USE flags to bring the default PHP installation
 # to the same level as Debian PHP (php5-cgi/cgi/fpm), aka the COMMON_CONFIG
