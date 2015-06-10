@@ -1,4 +1,4 @@
-# Copyright 1999-2014 stepping stone GmbH, Switzerland
+# Copyright 1999-2015 stepping stone GmbH, Switzerland
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND=">=app-admin/syslog-ng-3.4"
+RDEPEND=">=app-admin/syslog-ng-3.6"
 
 S="${WORKDIR}/${MY_P}"
 
