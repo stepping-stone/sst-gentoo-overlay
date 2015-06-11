@@ -1,0 +1,16 @@
+Remove call-time pass-by-reference, since this feature has been removed in
+PHP 5.4. According to the PHP documents, the reference should be in the
+function declaration arguments, rather than in the function call arguments.
+
+--- Spreadsheet/Excel/Writer/Worksheet.php_orig	2015-06-11 10:17:07.330426776 +0200
++++ Spreadsheet/Excel/Writer/Worksheet.php	2015-06-11 10:17:59.463216887 +0200
+@@ -2486,8 +2486,7 @@
+             $data     = pack('v',  count($ranges));
+             foreach($ranges as $range) 
+               $data .= pack('vvvv', $range[0], $range[2], $range[1], $range[3]);
+-            $string=$header.$data;
+-            $this->_append(&$string, true);
++            $this->_append($header.$data, true);
+           }
+     }
+ 
