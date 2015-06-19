@@ -7,7 +7,7 @@ EAPI=5
 MY_PN="zabbix-helpers"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="stepping stone GmbH Zabbix agent configuration"
+DESCRIPTION="stepping stone GmbH Zabbix agent helper scripts"
 HOMEPAGE="http://www.stepping-stone.ch/"
 SRC_URI="https://github.com/stepping-stone/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -26,11 +26,11 @@ src_install() {
     doexe usr/libexec/zabbix-helpers/*
 
 	insinto /usr/share/zabbix-helpers
-    doexe usr/share/zabbix-helpers/*
+    doins usr/share/zabbix-helpers/*
 
     insinto /etc/zabbix/zabbix_agentd.d
     insopts -m0640 -o root -g zabbix
-    doins etc/zabbix/zabbix_agentd.d/*
+    doins -r etc/zabbix/zabbix_agentd.d/*
 
 	insinto /etc/zabbix-helpers
 	insopts -m0640 -o root -g zabbix
