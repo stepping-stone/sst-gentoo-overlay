@@ -22,12 +22,19 @@ RDEPEND=">=net-analyzer/zabbix-1.8.20"
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-    exeinto /usr/libexec/zabbix
-    doexe usr/libexec/zabbix/*
+    exeinto /usr/libexec/zabbix-helpers
+    doexe usr/libexec/zabbix-helpers/*
+
+	insinto /usr/share/zabbix-helpers
+    doexe usr/share/zabbix-helpers/*
 
     insinto /etc/zabbix/zabbix_agentd.d
     insopts -m0640 -o root -g zabbix
     doins etc/zabbix/zabbix_agentd.d/*
+
+	insinto /etc/zabbix-helpers
+	insopts -m0640 -o root -g zabbix
+    doins etc/zabbix-helpers/*
 
     insinto /etc/sudoers.d
     doins etc/sudoers.d/*
@@ -40,4 +47,9 @@ pkg_postinst() {
         "${ROOT}"/etc/zabbix/zabbix_agentd.d
     chmod 750 \
         "${ROOT}"/etc/zabbix/zabbix_agentd.d
+    mkdir /var/cache/zabbix
+    chown zabbix:zabbix \
+        "${ROOT}"/var/cache/zabbix
+    chmod 750 \
+        "${ROOT}"/var/cache/zabbix
 }
