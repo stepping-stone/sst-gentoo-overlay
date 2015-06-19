@@ -30,11 +30,11 @@ src_install() {
 
     insinto /etc/zabbix/zabbix_agentd.d
     insopts -m0640 -o root -g zabbix
-    doins -r etc/zabbix/zabbix_agentd.d/*
+    doins etc/zabbix/zabbix_agentd.d/*
 
 	insinto /etc/zabbix-helpers
 	insopts -m0640 -o root -g zabbix
-    doins etc/zabbix-helpers/*
+    doins -r etc/zabbix-helpers/*
 
     insinto /etc/sudoers.d
     doins etc/sudoers.d/*
