@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit user
+
 MY_PN="syslog-ng"
 MY_P="${MY_PN}-${PV}"
 
