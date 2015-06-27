@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>c.affolter@stepping-stone.ch</email>
+		<name>Christian Affolter</name>
+	</maintainer>
+	<longdescription lang="en">
+		Samsung SSD Magician DC software is designed to help users with
+		easy-to-use disk management and diagnostic features for server and data 
+		center usage.
+		This software is only for Samsung SSD products.
+	</longdescription>
+</pkgmetadata>
