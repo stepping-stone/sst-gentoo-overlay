@@ -1,3 +1,9 @@
+*app-portage/eix
+*app-admin/sst-syslog-ng-configuration
+*dev-util/strace
+*sys-process/iotop
+*app-admin/puppet
+*net-analyzer/iftop
 *sys-apps/iproute2
 *app-misc/screen
 *app-misc/tmux
