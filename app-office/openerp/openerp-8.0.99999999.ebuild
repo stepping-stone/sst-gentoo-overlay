@@ -58,7 +58,7 @@ CDEPEND="!app-office/openerp-web
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/pyPdf[${PYTHON_USEDEP}]
 	${PYTHON_DEPS}
-	postgres? ( dev-db/postgresql-server )
+	postgres? ( dev-db/postgresql[server] )
 	ssl? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	"
 
