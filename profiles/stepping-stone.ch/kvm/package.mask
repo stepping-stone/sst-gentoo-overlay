@@ -15,7 +15,3 @@ mail-mta/nullmailer
 >=sys-kernel/linux-headers-3.11
 >=sys-kernel/gentoo-sources-3.11
 >=sys-kernel/hardened-sources-3.11
-
-# avoid pulling in python-3.4 as long as profiles/base/make.defaults
-# still references python3_3 as the default python3 implementation
-dev-lang/python:3.4
