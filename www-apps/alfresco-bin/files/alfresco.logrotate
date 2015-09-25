@@ -1,0 +1,5 @@
+@LOG_DIR@/* {
+    copytruncate
+    missingok
+    notifempty
+}
