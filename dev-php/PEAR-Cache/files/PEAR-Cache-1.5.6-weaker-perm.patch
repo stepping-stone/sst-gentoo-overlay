@@ -1,0 +1,20 @@
+--- Container/file.php_orig	2015-10-16 16:37:32.569232837 +0200
++++ Container/file.php	2015-10-16 16:38:06.729231342 +0200
+@@ -117,7 +117,7 @@
+                  $this->cache_dir .= '/';
+ 
+             if  (!file_exists($this->cache_dir) || !is_dir($this->cache_dir))
+-                mkdir($this->cache_dir, 0755);
++                mkdir($this->cache_dir, 0775);
+         }
+         $this->entries = array();
+         $this->group_dirs = array();
+@@ -358,7 +358,7 @@
+         $dir = $this->cache_dir . $group . '/';
+         if (is_writeable($this->cache_dir)) {
+             if (!file_exists($dir)) {
+-                mkdir($dir, 0755, true);
++                mkdir($dir, 0775, true);
+                 clearstatcache();
+             }
+         } else {

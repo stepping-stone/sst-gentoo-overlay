@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>php</herd>
+<use>
+	<flag name='weaker-perm'>Set weaker permissions when creating directories.
+	Used in association with ACLs to ensure a different user can still remove
+	the directories.</flag>
+</use>
+</pkgmetadata>
