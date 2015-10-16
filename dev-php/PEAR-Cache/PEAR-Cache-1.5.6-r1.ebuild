@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit php-pear-r1
+inherit php-pear-r1 eutils
 
 DESCRIPTION="Framework for caching of arbitrary data"
 
