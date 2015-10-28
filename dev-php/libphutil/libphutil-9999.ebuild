@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="dev-lang/php[curl]"
+RDEPEND="dev-lang/php:*[curl]"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
@@ -23,7 +23,7 @@ src_prepare() {
 }
 
 src_compile() {
-	emake -j1 -C support/xhpast/
+	emake -C support/xhpast/
 }
 
 src_install() {
