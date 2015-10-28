@@ -1,2 +1,6 @@
+# required to be able to switch to ruby21
 =dev-ruby/nokogiri-1.6.6.2 ~amd64
+=dev-ruby/rake-compiler-0.9.5 ~amd64
+
+# force stable
 =app-admin/checkrestart-0.47-r3 ~amd64
