@@ -14,9 +14,9 @@ GENTOO_MIRRORS="https://mirror.stepping-stone.ch/public/gentoo http://mirror.swi
 # -alsa: certain packages have USE=+alsa set (java, I'm looking at you)... ignore that
 # -cups: certain packages have USE=+cups set (java, I'm looking at you)... ignore that
 # -X: certain packages have USE=+X set (java, I'm looking at you)... ignore that
-# -ruby_targets_ruby19: the RUBY_TARGETS USE_EXPAND var is set to contain both ruby19 and ruby20,
-#                       but since puppet works with ruby20 we do not need ruby19 and we can't override RUBY_TARGETS in this make.defaults
-USE="${USE} bash-completion caps unicode xattr vim-syntax -alsa -cups -tcpd -X -ruby_targets_ruby19"
+# -ruby_targets_ruby19: the RUBY_TARGETS USE_EXPAND var is set to contain both ruby20 and ruby21,
+#                       but since puppet works with ruby21 we do not need ruby20 and we can't override RUBY_TARGETS in this make.defaults
+USE="${USE} bash-completion caps unicode xattr vim-syntax -alsa -cups -tcpd -X -ruby_targets_ruby20"
 
 # obsoletes localepurge
 LINGUAS="de fr it"
