@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -33,7 +33,7 @@ src_install() {
 	doins etc/zabbix/zabbix_agentd.d/*
 
 	insinto /etc/zabbix-helpers
-	insopts -m0640 -o root -g zabbix
+	insopts -m0644
 	doins -r etc/zabbix-helpers/*
 
 	insinto /etc/sudoers.d
@@ -47,9 +47,7 @@ pkg_postinst() {
 		"${ROOT}"/etc/zabbix/zabbix_agentd.d
 	chmod 750 \
 		"${ROOT}"/etc/zabbix/zabbix_agentd.d
-	mkdir /var/cache/zabbix
+	mkdir -p -m0750 "${ROOT}"/var/cache/zabbix
 	chown zabbix:zabbix \
-		"${ROOT}"/var/cache/zabbix
-	chmod 750 \
 		"${ROOT}"/var/cache/zabbix
 }
