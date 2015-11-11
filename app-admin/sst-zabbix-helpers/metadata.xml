@@ -2,6 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<longdescription lang="en">
-		Monitoring helpers scripts, mainly for Zabbix.
+		Zabbix agent helper scripts and applications used for user parameters.
 	</longdescription>
 </pkgmetadata>
