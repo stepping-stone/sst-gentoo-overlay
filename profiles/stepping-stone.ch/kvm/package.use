@@ -72,4 +72,4 @@ net-nds/openldap overlays
 # * use the Gentoo default for everything else
 =dev-libs/apr-util-1.5* ldap
 =www-servers/apache-2.4* ldap threads apache2_mpms_worker
-=www-servers/apache-2.4* apache2_modules_proxy apache2_modules_proxy_ajp apache2_modules_proxy_fcgi apache2_modules_proxy_http apache2_modules_proxy_scgi apache2_modules_proxy_wstunnel
+=www-servers/apache-2.4* apache2_modules_proxy apache2_modules_proxy_ajp apache2_modules_proxy_fcgi apache2_modules_proxy_http apache2_modules_proxy_scgi apache2_modules_proxy_wstunnel apache2_modules_remoteip
