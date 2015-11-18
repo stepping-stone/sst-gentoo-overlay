@@ -19,7 +19,7 @@ KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="=app-admin/syslog-ng-3.6"
+RDEPEND="=app-admin/syslog-ng-3.6*"
 
 S="${WORKDIR}/${MY_P}"
 
