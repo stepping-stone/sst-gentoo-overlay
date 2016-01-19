@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit eutils
+
 DESCRIPTION="GeoClass provides classes to handle georeferenced data"
 HOMEPAGE="http://www.multimediamotz.de/GeoClass/"
 SRC_URI="mirror://sourceforge/geoclassphp/${P}.tar.gz"
@@ -16,6 +18,10 @@ DEPEND="dev-lang/php:*"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/Volumes/MMMFIRE/multimediamotz/${PN}/${P}"
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-constructor.patch"
+}
 
 src_install() {
 	rm LICENSE

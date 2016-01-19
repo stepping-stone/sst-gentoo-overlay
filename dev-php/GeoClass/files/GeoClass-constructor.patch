@@ -1,0 +1,18 @@
+--- Geo/Map.php	2016-01-19 10:28:25.000000000 +0100
++++ Geo/Map.php	2016-01-19 10:26:27.990734353 +0100
+@@ -60,7 +60,7 @@
+      * @return  void
+      */
+     function Geo_Map($x=false,$y=false) {
+-        $this->e00($x,$y);
++        parent::__construct($x,$y);
+         $this->color['white']    = $this->color(255, 255, 255);
+         $this->color['red']      = $this->color(255, 0, 0);
+         $this->color['black']    = $this->color(0, 0, 0);
+@@ -421,4 +421,4 @@
+         return $html;
+     }
+ }
+-?>
+\ No newline at end of file
++?>
