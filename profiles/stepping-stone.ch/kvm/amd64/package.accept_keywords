@@ -34,7 +34,7 @@ dev-ruby/rake-compiler ~amd64
 
 # force php-5.6* as stable
 dev-lang/php:5.6 ~amd64
-app-eselect/eselect-php-0.9.1 ~amd64
+app-eselect/eselect-php ~amd64
 
 # force LTS jenkins-bin as stable
 dev-util/jenkins-bin:lts ~amd64
