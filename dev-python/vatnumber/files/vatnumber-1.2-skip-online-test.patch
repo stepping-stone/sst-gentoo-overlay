@@ -1,0 +1,18 @@
+diff --git a/vatnumber/tests.py b/vatnumber/tests.py
+index ef10239..726d4da 100644
+--- a/vatnumber/tests.py
++++ b/vatnumber/tests.py
+@@ -194,13 +194,6 @@ class VatNumberTest(unittest.TestCase):
+                 test = self.assertFalse
+             test(vatnumber.check_vat(code + number), code + number)
+ 
+-    def test_vies(self):
+-        '''
+-        Test vies
+-        '''
+-        for vat in VIES_NUMBERS:
+-            self.assert_(vatnumber.check_vies(vat))
+-
+     def test_countries(self):
+         '''
+         Test countries

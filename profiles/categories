@@ -9,3 +9,4 @@ sys-apps
 app-misc
 net-misc
 dev-util
+dev-nodejs
