@@ -44,6 +44,13 @@ dev-db/mariadb-galera client-libs -perl extraengine
 # Use sst-xtrabackup by default
 dev-db/mariadb-galera sst-xtrabackup -sst-rsync
 
+# Enable Galera features by default. This way we don't have to build
+# the same ebuild with different USE flags. Galera replication needs
+# to be enabled explicitly in the MariaDB configuration, therefor we
+# won't have any issues with installations that don't use the Galera
+# features.
+>=dev-db/mariadb-10.1 galera sst-xtrabackup
+
 # The following list enables at least the USE flags to bring the default PHP installation
 # to the same level as Debian PHP (php5-cgi/cgi/fpm), aka the COMMON_CONFIG
 # in http://anonscm.debian.org/cgit/pkg-php/php.git/tree/debian/rules
