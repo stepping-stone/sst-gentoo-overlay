@@ -20,6 +20,7 @@ USE="${USE} bash-completion caps unicode xattr vim-syntax -alsa -cups -tcpd -X -
 
 # obsoletes localepurge
 LINGUAS="de fr it"
+L10N="${LINGUAS}"
 
 # this is enough for kvm platforms
 GRUB_PLATFORMS="pc"
