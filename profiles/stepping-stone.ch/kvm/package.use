@@ -84,3 +84,6 @@ net-nds/openldap overlays
 # Add support for sslv2 and sslv3 (these protocols shouldn't be used anymore
 # but in some cases support is required).
 dev-libs/openssl sslv2 sslv3
+
+# Build the arping utility, which is required for propper IP failover
+net-misc/iputils arping
