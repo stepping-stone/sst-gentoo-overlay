@@ -7,8 +7,8 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 )
 inherit eutils distutils-r1 multilib
 
-DESCRIPTION="This is a sample skeleton ebuild file"
-HOMEPAGE="http://dev.mysql.com/doc/mysql-utilities/"
+DESCRIPTION="MySQL Utilities provides a collection of command-line utilities that are used for maintaining and administering MySQL servers"
+HOMEPAGE="http://dev.mysql.com/doc/mysql-utilities/1.5/en/"
 SRC_URI="mirror://mysql/Downloads/MySQLGUITools/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
