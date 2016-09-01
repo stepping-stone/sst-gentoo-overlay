@@ -39,9 +39,6 @@ app-eselect/eselect-php ~amd64
 # force LTS jenkins-bin as stable
 dev-util/jenkins-bin:lts ~amd64
 
-# we always want latest&greatest, also recommended by upstream
-sys-fs/xfsprogs ~amd64
-
 # force version eclean-kernel v0.4.1 and its dependency as stable
 ~app-admin/eclean-kernel-0.4.1 ~amd64
 ~dev-python/pymountboot-0.2.2 ~amd64
