@@ -1,0 +1,2 @@
+# unmask PHP 5.5 target until all systems are upgarded to > 5.5
+-php_targets_php5-5
