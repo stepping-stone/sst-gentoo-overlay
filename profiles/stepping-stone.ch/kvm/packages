@@ -5,6 +5,7 @@
 *app-admin/sst-syslog-ng-configuration
 *app-admin/sudo
 *app-admin/syslog-ng
+*app-arch/lz4
 *app-arch/unzip
 *app-arch/zip
 *app-backup/onlinebackup
