@@ -87,3 +87,6 @@ dev-libs/openssl sslv2 sslv3
 
 # Build the arping utility, which is required for propper IP failover
 net-misc/iputils arping
+
+# Build gtk+ with support for X, as either X or wayland support is required
+x11-libs/gtk+ X
