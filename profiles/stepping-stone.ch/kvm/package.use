@@ -102,3 +102,6 @@ www-servers/uwsgi python uwsgi_plugins_zabbix -uwsgi_plugins_rrdtool -uwsgi_plug
 
 # Build boost with Python support, as commonly required.
 dev-libs/boost python
+
+# Install IcedTea without GTK support and don't install the X backend for AWT.
+dev-java/icedtea-bin -gtk headless-awt
