@@ -90,3 +90,15 @@ net-misc/iputils arping
 
 # Build gtk+ with support for X, as either X or wayland support is required
 x11-libs/gtk+ X
+
+# Build GraphicsMagick, ImageMagick and Python's Pillow with commonly useful USE flags.
+media-gfx/graphicsmagick bzip2 cxx jpeg lzma modules openmp png threads truetype postscript tiff zlib
+media-gfx/imagemagick bzip2 cxx jpeg lzma openmp png truetype postscript tiff zlib
+dev-python/pillow jpeg truetype webp truetype tiff zlib
+media-video/ffmpeg mp3 opus threads vpx x264
+
+# Build uWSGI with Python support, enable the Zabbix plugin and disable the rrdtool and rsyslog plugins.
+www-servers/uwsgi python uwsgi_plugins_zabbix -uwsgi_plugins_rrdtool -uwsgi_plugins_rsyslog
+
+# Build boost with Python support, as commonly required.
+dev-libs/boost python
