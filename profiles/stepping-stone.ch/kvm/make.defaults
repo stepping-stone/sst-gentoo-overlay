@@ -59,3 +59,6 @@ FEATURES="sandbox userfetch userpriv usersandbox usersync"
 
 # Accept all licenses by default
 ACCEPT_LICENSE="*"
+
+# Disable the warning countdown when unmerging packages.
+CLEAN_DELAY="0"
