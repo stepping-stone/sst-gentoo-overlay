@@ -92,8 +92,8 @@ net-misc/iputils arping
 x11-libs/gtk+ X
 
 # Build GraphicsMagick, ImageMagick and Python's Pillow with commonly useful USE flags.
-media-gfx/graphicsmagick bzip2 cxx jpeg jpeg2k lzma modules openmp png threads truetype postscript tiff zlib
-media-gfx/imagemagick bzip2 cxx jpeg jpeg2k lzma openmp png truetype postscript tiff zlib
+media-gfx/graphicsmagick bzip2 cxx jpeg jpeg2k lzma modules openmp png svg threads truetype postscript tiff zlib
+media-gfx/imagemagick bzip2 cxx jpeg jpeg2k lzma openmp png svg truetype postscript tiff zlib
 dev-python/pillow jpeg jpeg2k truetype webp truetype tiff zlib
 media-video/ffmpeg mp3 opus threads vpx x264
 
