@@ -49,5 +49,5 @@ dev-util/jenkins-bin:lts ~amd64
 # force postfix <v3.0.0 as stable since we are not ready with our configuration yet.
 <mail-mta/postfix-3.0.0 ~amd64
 
-# Use GlusterFS 3.5 branch
-=sys-cluster/glusterfs-3.5* ~amd64
+# Use GlusterFS 3.8.8
+=sys-cluster/glusterfs-3.8.8 ~amd64
