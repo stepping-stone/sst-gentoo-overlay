@@ -1,5 +1,5 @@
-#!/sbin/runscript
-# Copyright 1999-2015 Gentoo Foundation
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 : ${JAVA_HOME:=$(java-config ${SOLR_JVM:+--select-vm ${SOLR_JVM}} --jre-home)}
@@ -36,6 +36,7 @@ start() {
 		--exec ${JAVA} \
 		-- \
 			${JAVA_OPTS} \
+			-Djetty.host=${SOLR_HOST} \
 			-Djetty.port=${SOLR_PORT} \
 			-DSTOP.PORT=${SOLR_STOP_PORT} \
 			-DSTOP.KEY=${SOLR_STOP_KEY} \
