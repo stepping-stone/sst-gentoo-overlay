@@ -9,3 +9,4 @@ Notes:
 * we are using thin manifests (Manifest files contain only distfiles)
 * we are not using ChangeLog files (use git for that)
 * EAPI < 5 are banned
+* Adhere to the Gentoo git workflow [commit message format](https://wiki.gentoo.org/wiki/Gentoo_git_workflow#Commit_message_format)
