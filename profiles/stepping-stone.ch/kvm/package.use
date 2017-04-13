@@ -97,6 +97,9 @@ media-gfx/imagemagick bzip2 cxx jpeg jpeg2k lzma openmp png svg truetype postscr
 dev-python/pillow jpeg jpeg2k truetype webp truetype tiff zlib
 media-video/ffmpeg mp3 opus threads vpx x264
 
+# Build media-libs/freetype with PNG support
+media-libs/freetype png
+
 # Build uWSGI with Python support, enable the Zabbix plugin and disable the rrdtool and rsyslog plugins.
 www-servers/uwsgi python uwsgi_plugins_zabbix -uwsgi_plugins_rrdtool -uwsgi_plugins_rsyslog
 
