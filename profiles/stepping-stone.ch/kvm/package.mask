@@ -15,3 +15,6 @@ mail-mta/nullmailer
 >=sys-kernel/gentoo-sources-4.5
 >=sys-kernel/hardened-sources-4.5
 <sys-kernel/linux-headers-4.4
+
+# Mask Puppet 4 for now
+>=app-admin/puppet-4
