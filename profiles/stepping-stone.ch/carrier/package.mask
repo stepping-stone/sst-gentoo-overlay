@@ -1,3 +1,6 @@
 # Block newer versions of ulogd since we don't have a working config yet
 # The plan is to update this while puppet'izing the ulog config
 >=app-admin/ulogd-2
+
+# Mask Puppet 4 for now
+>=app-admin/puppet-4
