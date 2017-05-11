@@ -113,3 +113,6 @@ dev-java/oracle-jdk-bin jce
 # Install IcedTea without GTK support and don't install the X backend for AWT.
 dev-java/icedtea -gtk -webstart headless-awt
 dev-java/icedtea-bin -gtk -webstart headless-awt
+
+# Remove PAM support and add support for threads in PostgreSQL
+dev-db/postgresql -pam threads
