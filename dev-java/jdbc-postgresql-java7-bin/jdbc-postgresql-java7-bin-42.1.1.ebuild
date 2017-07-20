@@ -29,5 +29,5 @@ src_install() {
     dodir /usr/share/jdbc-postgresql/lib
 	insinto /usr/share/jdbc-postgresql/lib
     doins ${A}
-    dosym ${A} jdbc-postgresql.jar
+    dosym ${A} /usr/share/jdbc-postgresql/lib/jdbc-postgresql.jar
 }
