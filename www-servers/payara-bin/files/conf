@@ -1,0 +1,10 @@
+# /etc/conf.d/payara: Config file for /etc/init.d/payara
+
+# User under which the Payara server will be started
+PAYARA_USER='payara'
+
+# Payara domains which should be started, separated by space
+PAYARA_DOMAINS='domain1'
+
+# Root directory of the Payara installation, aka as-install-parent
+PAYARA_AS_INSTALL_PARENT='/opt/payara/glassfish'
