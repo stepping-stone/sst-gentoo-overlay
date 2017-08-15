@@ -5,18 +5,23 @@ EAPI=6
 
 DESCRIPTION="Binary Kernel, based on sys-kernel/gentoo-sources"
 HOMEPAGE=""
-SRC_URI="https://mirror.stepping-stone.ch/public/gentoo/binary-kernel/sst-kernel-vm-bin-4.4.79.tar.gz"
+SRC_URI="https://mirror.stepping-stone.ch/public/gentoo/${P}.tar.gz"
 
 LICENSE="GPL-2"
-SLOT="4.4.79"
+SLOT="${PV}"
 KEYWORDS="amd64"
 IUSE=""
 
 DEPEND="sys-boot/grub:2"
 RDEPEND="${DEPEND}"
 
+src_install() {
+	doins -r boot lib usr
+}
+
 pkg_postinst() {
-	grub-mkconfig -o /boot/grub/grub.cfg 		|| die "unable to generate GRUB configuration file"
+	grub-mkconfig -o /boot/grub/grub.cfg \
+		|| die "unable to generate GRUB configuration file"
 
 	rm -f /boot/{System.map,vmlinuz,config}.old
 }
