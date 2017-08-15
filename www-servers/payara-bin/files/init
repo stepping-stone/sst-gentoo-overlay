@@ -1,0 +1,46 @@
+#!/sbin/runscript
+# Copyright 1999-2017 stepping stone GmbH
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+        need net
+        use logger
+        after sshd postgresql mysql
+}
+
+start() {
+        local domain
+
+        for domain in ${PAYARA_DOMAINS}; do
+                start_domain "$domain"
+        done
+}
+
+stop() {
+        local domain
+
+        for domain in ${PAYARA_DOMAINS}; do
+                stop_domain "$domain"
+        done
+}
+
+start_domain() {
+        local domain="$1"
+
+        ebegin "Starting Payara Server domain '${domain}'"
+        su ${PAYARA_USER} -c \
+            "${PAYARA_AS_INSTALL_PARENT}/bin/asadmin start-domain ${domain}"
+
+        eend $?
+}
+
+stop_domain() {
+        local domain="$1"
+
+        ebegin "Stopping Payara Server domain '${domain}'"
+        su ${PAYARA_USER} -c \
+            "${PAYARA_AS_INSTALL_PARENT}/bin/asadmin stop-domain ${domain}"
+
+        eend $?
+}
