@@ -5,7 +5,7 @@ EAPI=6
 
 DESCRIPTION="Binary Kernel, based on sys-kernel/gentoo-sources"
 HOMEPAGE=""
-SRC_URI="https://mirror.stepping-stone.ch/public/gentoo/${P}.tar.gz"
+SRC_URI="https://mirror.stepping-stone.ch/public/gentoo/binary-kernel/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="${PV}"
