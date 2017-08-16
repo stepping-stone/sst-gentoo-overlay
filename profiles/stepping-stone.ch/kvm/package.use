@@ -34,7 +34,7 @@ mail-mta/postfix sasl -pam
 
 # Build client libraries, disable perl support and the BDB Storage Engine
 # in MySQL since we never needed it
-dev-db/mysql client-libs -berkdb -perl
+dev-db/mysql extraengine openssl server -perl
 
 # Build client libraries, disable perl support since we never needed it
 # but enable extraengine support since it doesn't pull in anything else
