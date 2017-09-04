@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="x86 amd64"
 IUSE=""
 
-RDEPEND=">=virtual/jdk-1.7"
+RDEPEND=">=virtual/jdk-1.7 virtual/jdbc-postgresql-bin"
 
 S="${WORKDIR}/payara41"
 MY_PN="payara"
