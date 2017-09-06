@@ -2,6 +2,7 @@
 *app-admin/eclean-kernel
 *app-admin/logrotate
 *app-admin/puppet
+*app-admin/sst-gentoo-tools
 *app-admin/sst-syslog-ng-configuration
 *app-admin/sudo
 *app-admin/syslog-ng
