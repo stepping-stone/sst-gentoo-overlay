@@ -8,7 +8,7 @@ DESCRIPTION="A collection of useful scripts for Gentoo Linux"
 HOMEPAGE="https://github.com/stepping-stone/sst-gentoo-tools"
 SRC_URI="https://github.com/stepping-stone/${PN}/archive/${PV}.tar.gz -> ${PN}.tar.gz"
 
-LICENSE="MIT"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
 
