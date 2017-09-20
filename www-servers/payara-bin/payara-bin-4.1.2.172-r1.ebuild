@@ -21,8 +21,8 @@ MY_PN="payara"
 INSTALL_DIR="/opt/${MY_PN}"
 
 pkg_setup() {
-	enewgroup payara
-	enewuser payara -1 /bin/bash ${INSTALL_DIR}/home payara
+	enewgroup glassfish
+	enewuser glassfish -1 /bin/bash /home/glassfish glassfish
 }
 
 src_prepare() {
@@ -51,14 +51,14 @@ src_install() {
 	keepdir ${INSTALL_DIR}/glassfish/domains
 	fperms -R g+w "${INSTALL_DIR}/glassfish/domains"
 
-	fowners -R payara:payara ${INSTALL_DIR}
+	fowners -R glassfish:glassfish ${INSTALL_DIR}
 
 	echo "CONFIG_PROTECT=\"${INSTALL_DIR}/glassfish/config\"" > "${T}/25payara"
 	doenvd "${T}/25payara"
 }
 
 pkg_postinst() {
-	elog "You must be in the payara group to use Payara without root rights."
+	elog "You must be in the glassfish group to use Payara without root rights."
 	elog "You should create separate domain for development needs using"
 	elog "    \$ asadmin create-domain devdomain"
 	elog "under your account"
