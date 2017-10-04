@@ -16,9 +16,8 @@ IUSE="-external-config"
 
 RDEPEND=">=virtual/jdk-1.8 virtual/jdbc-postgresql-bin"
 
-S="${WORKDIR}/payara41"
-MY_PN="payara"
-INSTALL_DIR="/opt/${MY_PN}"
+S="${WORKDIR}"/payara41
+INSTALL_DIR=/opt/payara
 
 pkg_setup() {
 	enewgroup glassfish
@@ -35,7 +34,7 @@ src_prepare() {
 			keyfile keystore.jks logging.properties)
 
 		for filename in ${config_files[@]} ; do
-			rm glassfish/domains/domain1/config/"$filename" || die
+			rm glassfish/domains/domain1/config/"${filename}" || die
 		done
 
 		rm glassfish/lib/registration/servicetag-registry.xml || die
@@ -48,26 +47,26 @@ src_install() {
 	doins -r glassfish javadb mq bin
 	keepdir "${INSTALL_DIR}"/home
 
-	for i in bin/* ; do
-		fperms 755 ${INSTALL_DIR}/${i}
-		make_wrapper "$(basename ${i})" "${INSTALL_DIR}/${i}"
+	for filename in bin/* ; do
+		fperms 755 "${INSTALL_DIR}"/"${filename}"
+		make_wrapper "$(basename "${filename}")" "${INSTALL_DIR}"/"${filename}"
 	done
 
-	for i in glassfish/bin/* ; do
-		fperms 755 ${INSTALL_DIR}/${i}
+	for filename in glassfish/bin/* ; do
+		fperms 755 "${INSTALL_DIR}"/"${filename}"
 	done
 		# TODO - major version function
 	newconfd "${FILESDIR}"/conf glassfishv3
     newinitd "${FILESDIR}"/init glassfishv3
 
 
-	keepdir ${INSTALL_DIR}/glassfish/domains
-	fperms -R g+w "${INSTALL_DIR}/glassfish/domains"
+	keepdir "${INSTALL_DIR}"/glassfish/domains
+	fperms -R g+w "${INSTALL_DIR}"/glassfish/domains
 
-	fowners -R glassfish:glassfish ${INSTALL_DIR}
+	fowners -R glassfish:glassfish "${INSTALL_DIR}"
 
-	echo "CONFIG_PROTECT=\"${INSTALL_DIR}/glassfish/config\"" > "${T}/25payara"
-	doenvd "${T}/25payara"
+	echo "CONFIG_PROTECT=\"${INSTALL_DIR}/glassfish/config\"" > "${T}"/25payara
+	doenvd "${T}"/25payara
 }
 
 pkg_postinst() {
