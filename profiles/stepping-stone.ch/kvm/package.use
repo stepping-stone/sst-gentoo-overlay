@@ -73,6 +73,10 @@ dev-lang/php ldap ldap-sasl mysql mysqli postgres
 # Enable since it does not generate additional dependencies and is commonly used on OpenLDAP installations
 net-nds/openldap overlays
 
+# Apache 2.2
+=www-servers/apache-2.2* ldap threads apache2_mpms_worker
+=www-servers/apache-2.2* apache2_modules_proxy apache2_modules_proxy_ajp apache2_modules_proxy_http apache2_modules_proxy_scgi
+
 # Configure Apache-2.4:
 # * enable threads and the worker MPM
 # * enable additional proxy modules used in our deployments
