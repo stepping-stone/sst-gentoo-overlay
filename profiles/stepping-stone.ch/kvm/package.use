@@ -111,8 +111,8 @@ www-servers/uwsgi python uwsgi_plugins_zabbix -uwsgi_plugins_rrdtool -uwsgi_plug
 dev-libs/boost python
 
 # Install the Java Cryptographic Extension which provides a framework for encryption, key generation and key agreement
-dev-java/oracle-jre-bin jce
-dev-java/oracle-jdk-bin jce
+dev-java/oracle-jre-bin jce headless-awt
+dev-java/oracle-jdk-bin jce headless-awt
 
 # Install IcedTea without GTK support and don't install the X backend for AWT.
 dev-java/icedtea -gtk -webstart headless-awt
