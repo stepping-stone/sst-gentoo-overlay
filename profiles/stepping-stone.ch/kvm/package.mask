@@ -23,3 +23,6 @@ mail-mta/nullmailer
 # to connect to the cloud-init/EC2 IP address 169.254.169.254 in order to
 # retrieve facts and hangs itself up in an infinite re-try loop).
 >=dev-ruby/facter-2.5
+
+# Temporarily mask GCC 6.4
+>=sys-devel/gcc-6.4
