@@ -8,7 +8,7 @@ WSREP_REVISION="25"
 HAS_TOOLS_PATCH="1"
 SUBSLOT="18"
 
-inherit toolchain-funcs mysql-multilib
+inherit toolchain-funcs mysql-multilib-r1
 # only to make repoman happy. it is really set in the eclass
 IUSE="$IUSE"
 
