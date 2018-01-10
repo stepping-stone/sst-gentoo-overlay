@@ -21,8 +21,8 @@ IUSE="+postgres +imagemagick +share ooodirect"
 TOMCAT_SLOT="7"
 
 DEPEND="app-arch/unzip
-	|| ( =dev-java/icedtea-bin-7*:7[cups] =dev-java/oracle-jre-bin-1.7.0* )"
-RDEPEND="|| ( =dev-java/icedtea-bin-7*:7[cups] =dev-java/oracle-jre-bin-1.7.0* )
+	|| ( =dev-java/icedtea-bin:8[cups] =dev-java/oracle-jre-bin:1.8 )"
+RDEPEND="|| ( =dev-java/icedtea:8[cups] =dev-java/oracle-jre-bin:1.8 )
 	>=www-servers/tomcat-7.0.29:${TOMCAT_SLOT}
 	media-gfx/swftools
 	postgres? ( dev-java/jdbc-postgresql )
