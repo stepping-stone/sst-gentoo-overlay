@@ -26,3 +26,6 @@ mail-mta/nullmailer
 
 # Temporarily mask GCC 6.4
 >=sys-devel/gcc-6.4
+
+# We need to use gluster 3.8
+>sys-cluster/glusterfs-3.9
