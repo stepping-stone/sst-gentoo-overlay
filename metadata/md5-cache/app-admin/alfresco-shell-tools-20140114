@@ -1,0 +1,11 @@
+DEFINED_PHASES=configure install unpack
+DEPEND=>=dev-vcs/git-1.8.2.1
+DESCRIPTION=Swiss army knife to to interact with Alfresco from the shell
+EAPI=5
+HOMEPAGE=https://code.google.com/p/alfresco-shell-tools/
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=app-misc/jshon net-misc/curl app-shells/bash
+SLOT=0
+_eclasses_=git-r3	fec09a83ae965b041b47f5ff7c8ba29a
+_md5_=ddff4ffb3d943ed1cb1ac8c3dfbaea48

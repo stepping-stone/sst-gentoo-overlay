@@ -1,0 +1,10 @@
+DEFINED_PHASES=install postinst
+DEPEND=sys-boot/grub:2
+DESCRIPTION=stepping stone GmbH binary vm kernel, based on sys-kernel/gentoo-sources
+EAPI=6
+KEYWORDS=amd64
+LICENSE=GPL-2
+RDEPEND=sys-boot/grub:2
+SLOT=4.4.85
+SRC_URI=https://mirror.stepping-stone.ch/public/gentoo/binary-kernel/sst-kernel-vm-bin-4.4.85.tar.gz
+_md5_=0217b1b88c6d75c8a415bc64d361df6d

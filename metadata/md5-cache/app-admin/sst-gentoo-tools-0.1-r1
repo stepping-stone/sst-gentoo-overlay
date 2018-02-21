@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=A collection of useful scripts for Gentoo Linux
+EAPI=6
+HOMEPAGE=https://github.com/stepping-stone/sst-gentoo-tools
+KEYWORDS=amd64 x86
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=https://github.com/stepping-stone/sst-gentoo-tools/archive/0.1.tar.gz -> sst-gentoo-tools.tar.gz
+_md5_=8fd432a6a3f199efd7c53d4d8d13c4e4

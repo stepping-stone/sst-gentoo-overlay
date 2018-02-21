@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=>=virtual/jdk-1.6.0
+DESCRIPTION=Leiningen is a build utility for clojure projects.
+EAPI=5
+HOMEPAGE=http://github.com/technomancy/leiningen/
+KEYWORDS=amd64 x86
+RDEPEND=>=virtual/jre-1.6.0
+SLOT=0
+SRC_URI=https://raw.githubusercontent.com/technomancy/leiningen/2.5.0/bin/lein https://github.com/technomancy/leiningen/releases/download/2.5.0/leiningen-2.5.0-standalone.jar
+_md5_=54f418fbfa4ee48ec61f47d7a3c8fab4
