@@ -1,0 +1,10 @@
+DEFINED_PHASES=install postinst
+DESCRIPTION=stepping stone GmbH Zabbix agent helper scripts
+EAPI=5
+HOMEPAGE=http://www.stepping-stone.ch/
+KEYWORDS=amd64 x86
+LICENSE=AGPL-3
+RDEPEND=>=net-analyzer/zabbix-1.8.20
+SLOT=0
+SRC_URI=https://github.com/stepping-stone/zabbix-helpers/archive/v2.1.0.tar.gz -> sst-zabbix-helpers-2.1.0.tar.gz
+_md5_=1f3ce05ba38ac35729e4b171f4a571ad
