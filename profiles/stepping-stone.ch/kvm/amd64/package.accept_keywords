@@ -36,4 +36,4 @@ dev-util/jenkins-bin:lts ~amd64
 <mail-mta/postfix-3.0.0 ~amd64
 
 # Use GlusterFS 3.8
-~sys-cluster/glusterfs-3.8* ~amd64
+~sys-cluster/glusterfs-3.8 ~amd64
