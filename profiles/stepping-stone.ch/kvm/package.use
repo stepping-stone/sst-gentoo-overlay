@@ -124,3 +124,6 @@ dev-db/postgresql -pam threads
 # Support UTF-16 and UTF-32 matching by default (some software requires it anyway)
 dev-libs/libpcre pcre16 pcre32
 dev-libs/libpcre2 jit
+
+# As required by media-gfx/wkhtmltopdf
+dev-qt/qtwebkit -gstreamer printsupport
