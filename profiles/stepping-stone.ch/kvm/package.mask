@@ -16,13 +16,10 @@ mail-mta/nullmailer
 >=sys-kernel/hardened-sources-4.5
 <sys-kernel/linux-headers-4.4
 
-# Mask Puppet 4 for now
->=app-admin/puppet-4
-
 # Facter 2.5.x seems to have a bug and is therefore not useable (facter tries
 # to connect to the cloud-init/EC2 IP address 169.254.169.254 in order to
 # retrieve facts and hangs itself up in an infinite re-try loop).
->=dev-ruby/facter-2.5
+~dev-ruby/facter-2.5
 
 # Temporarily mask GCC 7
 >=sys-devel/gcc-7
