@@ -1,5 +1,6 @@
 *app-admin/checkrestart
 *app-admin/eclean-kernel
+*app-admin/eselect
 *app-admin/logrotate
 *app-admin/puppet
 *app-admin/sst-gentoo-tools
