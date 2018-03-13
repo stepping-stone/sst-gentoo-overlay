@@ -25,4 +25,4 @@ mail-mta/nullmailer
 >=sys-devel/gcc-7
 
 # We need to use gluster 3.8
->sys-cluster/glusterfs-3.9
+>=sys-cluster/glusterfs-3.9
