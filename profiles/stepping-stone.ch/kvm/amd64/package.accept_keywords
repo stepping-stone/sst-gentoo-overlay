@@ -29,9 +29,6 @@ dev-util/jenkins-bin:lts ~amd64
 ~app-admin/eclean-kernel-0.4.1 ~amd64
 ~dev-python/pymountboot-0.2.2 ~amd64
 
-# force checkrestart as stable
-~app-admin/checkrestart-0.47 ~amd64
-
 # force postfix <v3.0.0 as stable since we are not ready with our configuration yet.
 <mail-mta/postfix-3.0.0 ~amd64
 
