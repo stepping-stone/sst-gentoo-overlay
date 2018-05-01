@@ -7,5 +7,5 @@ LICENSE=MIT
 RDEPEND=dev-lang/php[json,xml,zip]
 SLOT=0
 SRC_URI=https://getcomposer.org/download/1.0.0-alpha10/composer.phar -> composer-1.0.0_alpha10.phar
-_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	versionator	ce21313503c41896ebcd7d58b0607e37
+_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	versionator	26ca8a8bd95d6a74122c08ba98a4ee72
 _md5_=7ee9587144e8ca80089cbc9dd415a21c
