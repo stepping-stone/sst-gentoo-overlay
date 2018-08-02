@@ -127,3 +127,6 @@ dev-libs/libpcre2 jit pcre16 pcre32
 
 # As required by media-gfx/wkhtmltopdf
 dev-qt/qtwebkit -gstreamer printsupport
+
+# Required by dev-python/pillow and virtual/python-imaging, as used on a lot of systems.
+>=media-libs/tiff-4.0.9-r3 jpeg
