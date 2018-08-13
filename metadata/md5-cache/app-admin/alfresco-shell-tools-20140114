@@ -1,5 +1,5 @@
 DEFINED_PHASES=configure install unpack
-DEPEND=>=dev-vcs/git-1.8.2.1
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Swiss army knife to to interact with Alfresco from the shell
 EAPI=5
 HOMEPAGE=https://code.google.com/p/alfresco-shell-tools/
@@ -7,5 +7,5 @@ KEYWORDS=~amd64
 LICENSE=GPL-3
 RDEPEND=app-misc/jshon net-misc/curl app-shells/bash
 SLOT=0
-_eclasses_=git-r3	25b08efef07cea6bcd45b8c6dcce2782
+_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b
 _md5_=ddff4ffb3d943ed1cb1ac8c3dfbaea48
