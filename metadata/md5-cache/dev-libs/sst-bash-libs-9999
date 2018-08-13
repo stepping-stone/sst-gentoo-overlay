@@ -1,10 +1,10 @@
 DEFINED_PHASES=install unpack
-DEPEND=>=dev-vcs/git-1.8.2.1
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=stepping stone Bash library functions
 EAPI=5
 HOMEPAGE=https://github.com/stepping-stone/bash-libs
 LICENSE=EUPL-1.1
 RDEPEND=app-shells/bash
 SLOT=0
-_eclasses_=git-r3	25b08efef07cea6bcd45b8c6dcce2782
+_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b
 _md5_=c55cbd63c9d4bc0855681da3025f0007
