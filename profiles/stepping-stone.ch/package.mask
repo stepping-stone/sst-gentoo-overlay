@@ -26,3 +26,7 @@ mail-mta/nullmailer
 
 # We need to use gluster 3.8
 >=sys-cluster/glusterfs-3.9
+
+# Block newer versions of ulogd since we don't have a working config yet
+# The plan is to update this while puppet'izing the ulog config
+>=app-admin/ulogd-2

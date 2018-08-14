@@ -1,0 +1,56 @@
+
+# --as-needed and -O1 are default
+# hash-style=gnu will soon be standard
+# and --sort-common does a little optimization in startup
+LDFLAGS="-Wl,-O1,--hash-style=gnu,--sort-common -Wl,--as-needed"
+
+GENTOO_MIRRORS="http://mirror.switch.ch/ftp/mirror/gentoo http://gentoo.oregonstate.edu http://www.ibiblio.org/pub/Linux/distributions/gentoo"
+SYNC="rsync://rsync.stepping-stone.ch/gentoo-portage"
+
+# bash-completion: you do like less-typing, don't you?
+# caps: services can drop their priviliges
+# mmx, sse, sse2: we are running x86_64, this is standard
+# unicode: you never know when you encounter umlaute
+# xattr: support for extended attributes, to store caps-configuration, selinux-labels, etc.
+# vim-syntax: vim is our main editor, yes, we want highlighting wherever possible
+# -alsa: certain packages have USE=+alsa set (java, I'm looking at you)... ignore that
+# -cups: certain packages have USE=+cups set (java, I'm looking at you)... ignore that
+# -X: certain packages have USE=+X set (java, I'm looking at you)... ignore that
+# -ruby_targets_ruby18: the RUBY_TARGETS USE_EXPAND var is set to contain both ruby18 and ruby19,
+#                       but we want ruby19 only and can't override RUBY_TARGETS in this make.defaults
+# -ruby_targets_ruby20: the RUBY_TARGETS USE_EXPAND var is set to contain both ruby19 and ruby20,
+#                       but until puppet works with ruby20 we want ruby19 only and we can't override RUBY_TARGETS in this make.defaults
+# -ipv6: we will never provide IPv6 on our vServers
+# -gpm: we will never have the need for mouse support on vServers
+USE="${USE} bash-completion caps mmx sse sse2 unicode xattr vim-syntax -alsa -ipv6 -cups -gpm -X -ruby_targets_ruby18 -ruby_targets_ruby20"
+
+# obsoletes localepurge
+LINGUAS="de fr it"
+
+# this is enough for kvm platforms
+GRUB_PLATFORMS="pc"
+
+# Configure portage to log via syslog and directly to the terminal
+PORTAGE_ELOG_CLASSES="info warn error log"
+PORTAGE_ELOG_SYSTEM="echo syslog"
+
+# Be nice to others while compiling
+PORTAGE_NICENESS="39" # highest possible value (-20 + 39 = 19)
+
+# Defines actions portage takes by default:
+# sandbox:     Enable sandbox-ing when running emerge(1) and ebuild(1)
+#
+# userfetch:   When portage is run as root, drop privileges to portage:portage
+#              during the fetching of package sources.
+#
+# userpriv:    Allow portage to drop root privileges and compile packages as
+#              portage:portage without a sandbox
+#
+# usersandbox: Enable the sandbox in the compile phase, when running without
+#              root privs
+#
+# usersync:    Drop privileges to the owner of PORTDIR for emerge --sync
+FEATURES="sandbox userfetch userpriv usersandbox usersync"
+
+# Accept all licenses by default
+ACCEPT_LICENSE="*"

@@ -1,0 +1,15 @@
+# we don't need hardware information on vservers
+dev-ruby/facter -dmi -pciutils
+
+# eix is required for puppet and gets executed several times,
+# enable optimization to make that (hopefully) faster
+app-portage/eix optimization
+
+# we want to be able to modify single values in config fiels
+# and creating/modifying users
+app-admin/puppet augeas shadow
+
+# Enable the Zabbix agent by default and disable SQLite dependency (which is
+# only used by the Zabbix server or proxy).
+net-analyzer/zabbix agent -sqlite
+
