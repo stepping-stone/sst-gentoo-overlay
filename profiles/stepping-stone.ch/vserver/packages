@@ -1,0 +1,8 @@
+-*app-arch/cpio
+-*net-misc/iputils
+-*virtual/modutils
+-*virtual/os-headers
+-*net-misc/openssh
+-*net-misc/rsync
+-*sys-apps/iproute2
+-*virtual/dev-manager
