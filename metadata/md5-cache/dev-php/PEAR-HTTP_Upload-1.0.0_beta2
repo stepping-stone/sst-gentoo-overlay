@@ -1,12 +1,11 @@
-DEFINED_PHASES=install setup
-DEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+DEFINED_PHASES=install postinst postrm
 DESCRIPTION=Easy and secure managment of files submitted via HTML Forms
-EAPI=5
-HOMEPAGE=http://pear.php.net/HTTP_Upload
+EAPI=6
+HOMEPAGE=https://pear.php.net/package/HTTP_Upload
 KEYWORDS=amd64
 LICENSE=LGPL-3
-RDEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+RDEPEND=>=dev-php/pear-1.8.1
 SLOT=0
-SRC_URI=http://pear.php.net/get/HTTP_Upload-1.0.0b2.tgz
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	php-pear-r1	7efef313de5b8b550520eeb909456206	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9
-_md5_=a28c7df8dac6287ff44c8f193f0445f6
+SRC_URI=https://pear.php.net/get/HTTP_Upload-1.0.0_beta2.tgz
+_eclasses_=php-pear-r2	b6753d24e4b080c2bec51eb2d844699f
+_md5_=cc27dc7898efd6c69cb6e26adcfec090

@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit php-pear-r1 eutils
+inherit php-pear-r2 eutils
 
 DESCRIPTION="Package for generating Excel spreadsheets"
 LICENSE="LGPL-2.1"

@@ -1,12 +1,11 @@
-DEFINED_PHASES=install setup
-DEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+DEFINED_PHASES=install postinst postrm
 DESCRIPTION=Class for parsing and handling URL
-EAPI=5
-HOMEPAGE=http://pear.php.net/Net_URL2
+EAPI=6
+HOMEPAGE=https://pear.php.net/package/Net_URL2
 KEYWORDS=amd64
 LICENSE=BSD
-RDEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+RDEPEND=>=dev-php/pear-1.8.1
 SLOT=0
-SRC_URI=http://pear.php.net/get/Net_URL2-2.2.0.tgz
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	php-pear-r1	7efef313de5b8b550520eeb909456206	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9
-_md5_=cdaad9b5d7fdd569d8e77520b11f1f05
+SRC_URI=https://pear.php.net/get/Net_URL2-2.2.0.tgz
+_eclasses_=php-pear-r2	b6753d24e4b080c2bec51eb2d844699f
+_md5_=62182f37ddb9fc9dd5d16b377f5c3699

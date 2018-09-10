@@ -6,5 +6,5 @@ HOMEPAGE=https://github.com/stepping-stone/bash-libs
 LICENSE=EUPL-1.1
 RDEPEND=app-shells/bash
 SLOT=0
-_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b
+_eclasses_=git-r3	918d6a744039c29af2cadc7317459765
 _md5_=c55cbd63c9d4bc0855681da3025f0007
