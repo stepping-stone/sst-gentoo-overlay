@@ -1,12 +1,12 @@
-DEFINED_PHASES=install setup
-DEPEND=dev-lang/php:*[ctype] dev-lang/php:* >=dev-php/pear-1.8.1
+DEFINED_PHASES=install postinst postrm
+DEPEND=dev-lang/php:*[ctype]
 DESCRIPTION=An implementation of Integrated Templates API with template 'compilation' added
-EAPI=5
-HOMEPAGE=http://pear.php.net/HTML_Template_Sigma
+EAPI=6
+HOMEPAGE=https://pear.php.net/package/HTML_Template_Sigma
 KEYWORDS=amd64
 LICENSE=PHP-3.01
-RDEPEND=dev-lang/php:*[ctype] dev-lang/php:* >=dev-php/pear-1.8.1
+RDEPEND=dev-lang/php:*[ctype] >=dev-php/pear-1.8.1
 SLOT=0
-SRC_URI=http://pear.php.net/get/HTML_Template_Sigma-1.3.0.tgz
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	php-pear-r1	7efef313de5b8b550520eeb909456206	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9
-_md5_=3a6838d109b14478e31434f42191aaf0
+SRC_URI=https://pear.php.net/get/HTML_Template_Sigma-1.3.0.tgz
+_eclasses_=php-pear-r2	b6753d24e4b080c2bec51eb2d844699f
+_md5_=3b992d66ca66129205f47a0753a89251

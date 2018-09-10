@@ -1,12 +1,11 @@
-DEFINED_PHASES=install setup
-DEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+DEFINED_PHASES=install postinst postrm
 DESCRIPTION=XML SVG API
-EAPI=5
-HOMEPAGE=http://pear.php.net/XML_SVG
+EAPI=6
+HOMEPAGE=https://pear.php.net/package/XML_SVG
 KEYWORDS=amd64
 LICENSE=LGPL-3
-RDEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+RDEPEND=>=dev-php/pear-1.8.1
 SLOT=0
-SRC_URI=http://pear.php.net/get/XML_SVG-1.1.0.tgz
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	php-pear-r1	7efef313de5b8b550520eeb909456206	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9
-_md5_=b1a05d758879dd2946090c0adfd173c3
+SRC_URI=https://pear.php.net/get/XML_SVG-1.1.0.tgz
+_eclasses_=php-pear-r2	b6753d24e4b080c2bec51eb2d844699f
+_md5_=ef7bee9f01843b2e3c4fcd72b4443eec

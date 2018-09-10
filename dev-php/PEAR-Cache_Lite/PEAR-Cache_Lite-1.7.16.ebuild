@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit php-pear-r1
+inherit php-pear-r2
 
 DESCRIPTION="Fast and Safe little cache system"
 

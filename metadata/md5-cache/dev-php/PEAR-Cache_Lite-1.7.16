@@ -1,12 +1,11 @@
-DEFINED_PHASES=install setup
-DEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+DEFINED_PHASES=install postinst postrm
 DESCRIPTION=Fast and Safe little cache system
-EAPI=5
-HOMEPAGE=http://pear.php.net/Cache_Lite
+EAPI=6
+HOMEPAGE=https://pear.php.net/package/Cache_Lite
 KEYWORDS=amd64
 LICENSE=LGPL-3
-RDEPEND=dev-lang/php:* >=dev-php/pear-1.8.1
+RDEPEND=>=dev-php/pear-1.8.1
 SLOT=0
-SRC_URI=http://pear.php.net/get/Cache_Lite-1.7.16.tgz
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	php-pear-r1	7efef313de5b8b550520eeb909456206	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9
-_md5_=68dc28e49572c150bf957f2e4721b919
+SRC_URI=https://pear.php.net/get/Cache_Lite-1.7.16.tgz
+_eclasses_=php-pear-r2	b6753d24e4b080c2bec51eb2d844699f
+_md5_=5df969c02abcb43464639f9614b930ea

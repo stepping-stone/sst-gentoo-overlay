@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-inherit php-pear-r1
+EAPI=6
+
+inherit php-pear-r2
 
 DESCRIPTION="Package for reading and writing OLE containers"
 LICENSE="PHP-2.02 PHP-3"

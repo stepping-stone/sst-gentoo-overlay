@@ -1,12 +1,12 @@
-DEFINED_PHASES=install setup
-DEPEND=dev-lang/php:*[gd] dev-php/PEAR-Cache_Lite dev-php/PEAR-Image_Color dev-php/PEAR-XML_SVG dev-lang/php:* >=dev-php/pear-1.8.1
+DEFINED_PHASES=install postinst postrm
+DEPEND=dev-lang/php:*[gd] dev-php/PEAR-Cache_Lite dev-php/PEAR-Image_Color dev-php/PEAR-XML_SVG
 DESCRIPTION=Visualization of GIS data
-EAPI=5
-HOMEPAGE=http://pear.php.net/Image_GIS
+EAPI=6
+HOMEPAGE=https://pear.php.net/package/Image_GIS
 KEYWORDS=amd64
 LICENSE=PHP-3.01
-RDEPEND=dev-lang/php:*[gd] dev-php/PEAR-Cache_Lite dev-php/PEAR-Image_Color dev-php/PEAR-XML_SVG dev-lang/php:* >=dev-php/pear-1.8.1
+RDEPEND=dev-lang/php:*[gd] dev-php/PEAR-Cache_Lite dev-php/PEAR-Image_Color dev-php/PEAR-XML_SVG >=dev-php/pear-1.8.1
 SLOT=0
-SRC_URI=http://pear.php.net/get/Image_GIS-1.1.2.tgz
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	php-pear-r1	7efef313de5b8b550520eeb909456206	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9
-_md5_=b63388ee1e00871ba0e526d02fcda24c
+SRC_URI=https://pear.php.net/get/Image_GIS-1.1.2.tgz
+_eclasses_=php-pear-r2	b6753d24e4b080c2bec51eb2d844699f
+_md5_=af7ca5624258e42efbba3618eb3b1d48
