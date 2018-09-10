@@ -7,5 +7,5 @@ IUSE=git subversion vhosts
 LICENSE=Apache-2.0
 RDEPEND=dev-vcs/arcanist dev-php/libphutil virtual/httpd-php dev-lang/php[iconv,curl,pcntl] || ( dev-lang/php[mysql] dev-lang/php[mysqli] ) git? ( dev-vcs/git[cgi] ) subversion? ( dev-vcs/subversion ) >=app-admin/webapp-config-1.50.15
 SLOT=9999
-_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b	webapp	6ae2395d7f341093c36057cb4f69101a
+_eclasses_=git-r3	918d6a744039c29af2cadc7317459765	webapp	6ae2395d7f341093c36057cb4f69101a
 _md5_=46503a4caec15d35a12a2dece41d181d
