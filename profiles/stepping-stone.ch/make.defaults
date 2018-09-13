@@ -1,0 +1,63 @@
+# --as-needed and -O1 are default
+# hash-style=gnu will soon be standard
+# and --sort-common does a little optimization in startup
+LDFLAGS="-Wl,-O1,--hash-style=gnu,--sort-common -Wl,--as-needed"
+
+# bash-completion: you do like less-typing, don't you?
+# caps: services can drop their priviliges
+# unicode: you never know when you encounter umlaute
+# xattr: support for extended attributes, to store caps-configuration, selinux-labels, etc.
+# vim-syntax: vim is our main editor, yes, we want highlighting wherever possible
+# -alsa: certain packages have USE=+alsa set (java, I'm looking at you)... ignore that
+# -cups: certain packages have USE=+cups set (java, I'm looking at you)... ignore that
+# -X: certain packages have USE=+X set (java, I'm looking at you)... ignore that
+# -ruby_targets_ruby19: the RUBY_TARGETS USE_EXPAND var is set to contain both ruby20 and ruby21,
+#                       but since puppet works with ruby21 we do not need ruby20 and we can't override RUBY_TARGETS in this make.defaults
+USE="${USE} ${CPU_FLAGS_X86} bash-completion caps unicode xattr vim-syntax -alsa -cups -tcpd -X -ruby_targets_ruby20"
+
+# Use our and Switch's mirror for distfiles
+GENTOO_MIRRORS="https://mirror.stepping-stone.ch/public/gentoo http://mirror.switch.ch/ftp/mirror/gentoo"
+
+# obsoletes localepurge
+LINGUAS="de fr it"
+L10N="${LINGUAS}"
+
+# this is enough for kvm platforms
+GRUB_PLATFORMS="pc"
+
+# Make the PHP ebuild install the production version of the php.ini by default
+PHP_INI_VERSION="production"
+
+# We want php-5.6 everywhere and again we can not set the USE expand here
+USE="${USE} -php_targets_php5-5 php_targets_php5-6"
+
+# Configure portage to log via syslog and directly to the terminal
+PORTAGE_ELOG_CLASSES="info warn error log"
+PORTAGE_ELOG_SYSTEM="echo syslog"
+
+# Be nice to others while compiling
+PORTAGE_NICENESS="39" # highest possible value (-20 + 39 = 19)
+
+# Defines actions portage takes by default:
+# sandbox:     Enable sandbox-ing when running emerge(1) and ebuild(1)
+#
+# userfetch:   When portage is run as root, drop privileges to portage:portage
+#              during the fetching of package sources.
+#
+# userpriv:    Allow portage to drop root privileges and compile packages as
+#              portage:portage without a sandbox
+#
+# usersandbox: Enable the sandbox in the compile phase, when running without
+#              root privs
+#
+# usersync:    Drop privileges to the owner of PORTDIR for emerge --sync
+FEATURES="sandbox userfetch userpriv usersandbox usersync"
+
+# Accept all licenses by default
+ACCEPT_LICENSE="*"
+
+# Disable the warning countdown when unmerging packages.
+CLEAN_DELAY="0"
+
+# Include build-time dependency updates and disable confirmations with just [Enter]
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --with-bdeps=y --ask-enter-invalid"
