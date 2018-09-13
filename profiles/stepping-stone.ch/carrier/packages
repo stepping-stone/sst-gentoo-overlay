@@ -10,15 +10,4 @@
 *sys-apps/dmidecode
 *sys-apps/ipmitool
 *app-admin/ulogd
-
-# We want to use the latest microcode in our CPUs.
-# In general the microcode-kernel-module itself looks for updates once loaded.
-# Since we have that module compiled in, we currently need microcode-ctl
-# to be able to reload/update microcodes without rebooting.
-# With kernel 3.6 we will be able to do
-#     echo 1 > /sys/devices/system/cpu/microcode/reload
-# at which point we won't be needing microcode-ctl anymore.
-*sys-apps/microcode-data
-*sys-apps/microcode-ctl
-
 *sys-process/iotop
