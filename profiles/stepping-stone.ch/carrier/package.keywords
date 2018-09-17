@@ -1,3 +1,2 @@
 sys-apps/microcode-data amd64 x86
 =net-firewall/iptables-1.4.16* amd64 x86
-=app-admin/ulogd-1.24* amd64 x86
