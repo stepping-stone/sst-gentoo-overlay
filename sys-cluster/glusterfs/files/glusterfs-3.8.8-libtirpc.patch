@@ -1,0 +1,88 @@
+From 5691b5ffeac2482481a214a61559f74293deeb41 Mon Sep 17 00:00:00 2001
+From: James Le Cuirot <chewi@gentoo.org>
+Date: Tue, 5 Dec 2017 23:34:35 +0000
+Subject: [PATCH] build: Allow libtirpc to be explicitly requested
+
+Some distributions like Gentoo no longer include the RPC stuff in
+their glibc packages.
+
+Change-Id: Ic7e34d82196aebdbca3d5b3b0ec3dd8b655e3355
+Signed-off-by: James Le Cuirot <chewi@gentoo.org>
+---
+ configure.ac                           | 12 ++++++++++++
+ libglusterfs/src/compat.h              |  4 ++++
+ rpc/rpc-lib/src/rpc-transport.c        |  4 ++++
+ xlators/nfs/server/src/mount3.c        |  4 ++--
+ xlators/nfs/server/src/mount3udp_svc.c |  2 +-
+ 5 files changed, 23 insertions(+), 3 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index ce689225c..2384375ff 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -290,6 +290,10 @@
+           fi
+         ])
+ 
++AC_ARG_WITH([libtirpc],
++        AS_HELP_STRING([--with-libtirpc], [Use libtirpc as RPC implementation (instead of sunrpc)]),
++        [], [with_libtirpc=no])
++
+ AC_ARG_WITH(pkgconfigdir,
+             [  --with-pkgconfigdir=DIR      pkgconfig file in DIR @<:@LIBDIR/pkgconfig@:>@],
+             [pkgconfigdir=$withval],
+@@ -893,6 +897,14 @@
+ 
+ GF_HOST_OS=""
+ GF_LDFLAGS="-rdynamic"
++ 
++if test "x$with_libtirpc" = "xyes" ; then
++    PKG_CHECK_MODULES([TIRPC], [libtirpc],
++       [GF_CFLAGS="$GF_CFLAGS $TIRPC_CFLAGS"; GF_LDFLAGS="$GF_LDFLAGS $TIRPC_LIBS";],
++       [AC_MSG_ERROR([libtirpc requested but library not found])]
++    )
++    AC_DEFINE(HAVE_LIBTIRPC, 1, [Define if libtirpc is enabled.])
++fi
+ 
+ dnl check for gcc -Werror=format-security
+ saved_CFLAGS=$CFLAGS
+diff --git a/libglusterfs/src/compat.h b/libglusterfs/src/compat.h
+index f4da4b2a0..9959982a0 100644
+--- a/libglusterfs/src/compat.h
++++ b/libglusterfs/src/compat.h
+@@ -479,6 +479,8 @@
+ #define ST_CTIM_NSEC_SET(stbuf, val) do { } while (0);
+ #endif
+ 
++#ifndef HAVE_LIBTIRPC
++
+ #ifndef IXDR_GET_LONG
+ #define IXDR_GET_LONG(buf) ((long)IXDR_GET_U_INT32(buf))
+ #endif
+@@ -495,10 +497,13 @@
+ #define IXDR_PUT_U_LONG(buf, v)       IXDR_PUT_LONG(buf, (long)(v))
+ #endif
+ 
++#endif /* HAVE_LIBTIRPC */
++
+ #if defined(__GNUC__) && !defined(RELAX_POISONING)
+ /* Use run API, see run.h */
+ #include <stdlib.h> /* system(), mkostemp() */
+ #include <stdio.h> /* popen() */
++#include <sys/sysmacros.h>
+ #pragma GCC poison system mkostemp popen
+ #endif
+ 
+diff --git a/rpc/rpc-lib/src/rpc-transport.c b/rpc/rpc-lib/src/rpc-transport.c
+@@ -659,6 +659,11 @@
+         dict_t          *dict = NULL;
+         char            *host = NULL;
+         int             ret = -1;
++#ifdef HAVE_LIBTIRPC
++        char            *addr_family = "inet6";
++#else
++        char            *addr_family = "inet";
++#endif
+ 
+         GF_ASSERT (options);
+         GF_ASSERT (hostname);
