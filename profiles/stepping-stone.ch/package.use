@@ -130,3 +130,7 @@ dev-qt/qtwebkit -gstreamer printsupport
 
 # Required by dev-python/pillow and virtual/python-imaging, as used on a lot of systems.
 >=media-libs/tiff-4.0.9-r3 jpeg
+
+# Use some common USE flags for PDNS
+net-dns/pdns mysql tools
+net-dns/pdns-recursor lua
