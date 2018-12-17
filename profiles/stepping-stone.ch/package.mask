@@ -26,3 +26,6 @@ mail-mta/nullmailer
 
 # We need to use gluster 3.8
 >=sys-cluster/glusterfs-3.9
+
+# Mask Puppet version 6 until Puppet master has been upgraded
+>=app-admin/puppet-6
