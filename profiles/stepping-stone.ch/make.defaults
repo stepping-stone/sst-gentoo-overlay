@@ -13,7 +13,11 @@ LDFLAGS="-Wl,-O1,--hash-style=gnu,--sort-common -Wl,--as-needed"
 # -X: certain packages have USE=+X set (java, I'm looking at you)... ignore that
 # -ruby_targets_ruby19: the RUBY_TARGETS USE_EXPAND var is set to contain both ruby20 and ruby21,
 #                       but since puppet works with ruby21 we do not need ruby20 and we can't override RUBY_TARGETS in this make.defaults
-USE="${USE} ${CPU_FLAGS_X86} bash-completion caps unicode xattr vim-syntax -alsa -cups -tcpd -X -ruby_targets_ruby20"
+USE="${USE} ${CPU_FLAGS_X86} bash-completion caps unicode xattr vim-syntax -alsa -cups -tcpd -X"
+
+# Add missing USE flags when switching to the new 17.0 profile.
+# See https://github.com/stepping-stone/sst-gentoo-overlay/pull/11
+USE="${USE} berkdb gdbm urandom"
 
 # Use our and Switch's mirror for distfiles
 GENTOO_MIRRORS="https://mirror.stepping-stone.ch/public/gentoo http://mirror.switch.ch/ftp/mirror/gentoo"
