@@ -134,3 +134,5 @@ dev-qt/qtwebkit -gstreamer printsupport
 # Use some common USE flags for PDNS
 net-dns/pdns mysql tools
 net-dns/pdns-recursor lua
+
+x11-base/xorg-server minimal -glamor
