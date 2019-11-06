@@ -8,9 +8,6 @@ sys-apps/module-init-tools
 # while allowing others (like postfix for the new postfix-nullmailer setup) to be installed instead
 mail-mta/nullmailer
 
-# Mask the new postfix stable release 3.0.0 since we are not ready with our configuration yet.
->=mail-mta/postfix-3.0.0
-
 # We're using the longterm 4.4.X kernel
 >=sys-kernel/gentoo-sources-4.5
 >=sys-kernel/hardened-sources-4.5
