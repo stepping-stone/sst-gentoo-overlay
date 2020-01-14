@@ -64,4 +64,4 @@ ACCEPT_LICENSE="*"
 CLEAN_DELAY="0"
 
 # Include build-time dependency updates, disable [Enter] for confirmation prompts, and respect masks during merge
-EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --with-bdeps=y --ask-enter-invalid --autounmask-keep-masks"
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --with-bdeps=y --ask-enter-invalid --autounmask-keep-masks --verbose-conflicts"
