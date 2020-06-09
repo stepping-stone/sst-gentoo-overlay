@@ -8,8 +8,8 @@ sys-apps/module-init-tools
 # while allowing others (like postfix for the new postfix-nullmailer setup) to be installed instead
 mail-mta/nullmailer
 
-# Our postfix Puppet recipe isn't ready for postfix 3 yet.
->=mail-mta/postfix-3
+# Mask postfix >= 3.6, since we're not sure whether our configuration works with 3.6 yet
+>=mail-mta/postfix-3.6
 
 # We're using the longterm 4.4.X kernel
 >=sys-kernel/gentoo-sources-4.5
