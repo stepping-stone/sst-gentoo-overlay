@@ -92,7 +92,7 @@ COMMON_DEPEND="
 		)
 		numa? ( sys-process/numactl )
 		oqgraph? ( >=dev-libs/boost-1.40.0:0= dev-libs/judy:0= )
-		pam? ( virtual/pam:0= )
+		pam? ( sys-libs/pam )
 		tokudb? ( app-arch/snappy )
 	)
 	>=dev-libs/libpcre-8.41-r1:3=
