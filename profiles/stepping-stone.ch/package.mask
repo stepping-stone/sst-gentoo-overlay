@@ -21,8 +21,8 @@ mail-mta/nullmailer
 # retrieve facts and hangs itself up in an infinite re-try loop).
 ~dev-ruby/facter-2.5
 
-# Temporarily mask GCC >= 9
->=sys-devel/gcc-9
+# Temporarily mask GCC >= 10
+>=sys-devel/gcc-10
 
 # We need to use gluster 3.8
 >=sys-cluster/glusterfs-3.9
