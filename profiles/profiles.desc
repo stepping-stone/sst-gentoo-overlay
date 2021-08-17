@@ -1,5 +1,6 @@
 amd64	stepping-stone.ch/kvm/amd64			stable
 amd64	stepping-stone.ch/kvm/amd64/no-multilib		stable
+amd64	stepping-stone.ch/kvm/amd64/no-multilib/17.1	stable
 amd64	stepping-stone.ch/carrier/amd64			stable
 amd64	stepping-stone.ch/carrier/amd64/kvm		stable
 amd64	stepping-stone.ch/carrier/amd64/vserver		stable
