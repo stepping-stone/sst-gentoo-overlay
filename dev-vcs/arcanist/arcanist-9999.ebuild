@@ -7,7 +7,7 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="ncurses"
 
-inherit python-single-r1 bash-completion-r1 git-r3
+inherit bash-completion-r1 git-r3
 
 DESCRIPTION="Command-line interface to Phabricator"
 HOMEPAGE="https://github.com/phacility/arcanist"
@@ -21,7 +21,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="dev-lang/php
 	dev-php/libphutil
-	dev-python/pep8"
+	dev-python/pycodestyle"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 src_install() {
