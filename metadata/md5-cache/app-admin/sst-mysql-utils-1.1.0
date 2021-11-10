@@ -1,10 +1,10 @@
 DEFINED_PHASES=install
 DESCRIPTION=stepping stone MySQL related scripts
-EAPI=5
+EAPI=6
 HOMEPAGE=https://github.com/stepping-stone/mysql-utils
 KEYWORDS=amd64
 LICENSE=EUPL-1.1
 RDEPEND=app-shells/bash dev-libs/sst-bash-libs
 SLOT=0
 SRC_URI=http://github.com/stepping-stone/mysql-utils/archive/v1.1.0.tar.gz -> sst-mysql-utils-1.1.0.tar.gz
-_md5_=dcdf1a01ac8ed88d4759ee22f445f4cd
+_md5_=ed1ecbd93aab52a3eac6ea2e61d3ea07

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-db/redis/redis-3.0.0.ebuild,v 1.2 2015/05/05 09:01:19 jer Exp $
 
-EAPI=5
+EAPI="6"
 
 inherit autotools eutils flag-o-matic systemd toolchain-funcs user
 

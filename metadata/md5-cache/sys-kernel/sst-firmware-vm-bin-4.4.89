@@ -5,4 +5,4 @@ KEYWORDS=amd64
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=https://mirror.stepping-stone.ch/public/gentoo/binary-kernel/sst-firmware-vm-bin-4.4.89.tar.gz
-_md5_=802eb62d0df54db1d13f82c65fb09ae6
+_md5_=4bc3fd48067b891c7ea066ad5fdf3521

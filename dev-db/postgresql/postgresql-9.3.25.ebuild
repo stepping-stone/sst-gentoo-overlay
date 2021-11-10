@@ -3,12 +3,12 @@
 
 EAPI="6"
 
-PYTHON_COMPAT=( python2_7 python3_{5,6} )
+PYTHON_COMPAT=( python2_7 python3_6 )
 
 PLOCALES="af cs de en es fa fr hr hu it ko nb pl pt_BR ro ru sk sl sv tr zh_CN
 		  zh_TW"
 
-inherit flag-o-matic l10n linux-info multilib pam prefix python-single-r1 \
+inherit flag-o-matic plocale linux-info multilib pam prefix python-single-r1 \
 		systemd user versionator
 
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~ppc-macos ~x86-solaris"
@@ -130,7 +130,7 @@ src_configure() {
 		$(use_with xml libxml) \
 		$(use_with xml libxslt) \
 		$(use_with zlib) \
-		$(use_enable nls nls "'$(l10n_get_locales)'")
+		$(use_enable nls nls "'$(plocale_get_locales)'")
 }
 
 src_compile() {

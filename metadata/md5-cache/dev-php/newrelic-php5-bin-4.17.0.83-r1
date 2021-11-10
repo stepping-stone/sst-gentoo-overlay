@@ -1,7 +1,7 @@
-DEFINED_PHASES=compile configure install postinst prepare setup unpack
-DEPEND=dev-lang/php[cli] sys-apps/grep[pcre] >=app-portage/elt-patches-20170422 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 >=sys-devel/m4-1.4.3 >=sys-devel/libtool-1.5.18 php_targets_php5-3? ( dev-lang/php:5.3 ) php_targets_php5-4? ( dev-lang/php:5.4 ) php_targets_php5-5? ( dev-lang/php:5.5 ) php_targets_php5-6? ( dev-lang/php:5.6 )
+DEFINED_PHASES=compile configure install postinst prepare setup test
+DEPEND=dev-lang/php[cli] sys-apps/grep[pcre] sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.2-r1:1.16 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 sys-devel/m4 sys-devel/libtool php_targets_php5-3? ( dev-lang/php:5.3 ) php_targets_php5-4? ( dev-lang/php:5.4 ) php_targets_php5-5? ( dev-lang/php:5.5 ) php_targets_php5-6? ( dev-lang/php:5.6 )
 DESCRIPTION=New Relic PHP Agent
-EAPI=5
+EAPI=6
 HOMEPAGE=http://newrelic.com/
 IUSE=php_targets_php5-3 php_targets_php5-4 php_targets_php5-5 php_targets_php5-6
 KEYWORDS=amd64
@@ -10,5 +10,5 @@ RDEPEND=dev-lang/php php_targets_php5-3? ( dev-lang/php:5.3 ) php_targets_php5-4
 REQUIRED_USE=|| ( php_targets_php5-3 php_targets_php5-4 php_targets_php5-5 php_targets_php5-6 )
 SLOT=0
 SRC_URI=https://download.newrelic.com/php_agent/archive/4.17.0.83/newrelic-php5-4.17.0.83-linux.tar.gz
-_eclasses_=autotools	d0e5375d47f4c809f406eb892e531513	libtool	0081a71a261724730ec4c248494f044d	multilib	97f470f374f2e94ccab04a2fb21d811e	php-ext-source-r2	bba5e9c6aaf088fd15faa2e767506125	toolchain-funcs	e4a9360924c5ce9f52e61342cde58512	user	8bc2845510e2109af75e3eeac607ec81
-_md5_=0d49843f6e69eff58c9e0e53a0258346
+_eclasses_=autotools	c9df06c186913b43eb211100ef5fe2cf	desktop	c0d27bf73aa08ca05b663dbd31fbef28	eapi7-ver	1a0a60ad07c8b32d2faba2d085dc0f24	edos2unix	33e347e171066657f91f8b0c72ec8773	epatch	9f813bb3c47cf2e60619a663b87c5f4e	estack	055c42df72f76a4f45ec92b35e83cd56	eutils	dab5d8ec471d025b79c9e6906bcf3bff	gnuconfig	262062cef0ba4f22b397193da514a350	libtool	241a8f577b9781a42a7421e53448a44e	ltprune	4f3f2db5ce3ccbeeacdf3f94954043aa	multilib	4b66d835ec72e021e359bb81eacfe988	php-ext-source-r3	b61f3cc83a4e875e5eaf215d17ad83ef	preserve-libs	dbc9f8d2d49c66467bc327fddd8317bd	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	user	1033b6bed7cf367c4507ea9a3ff503d0	user-info	2e75eaea3582b052ec16d9d5aa74ced3	vcs-clean	b690a7e9b6c497cf59326a7545df4283	wrapper	4251d4c84c25f59094fd557e0063a974
+_md5_=6cdbb60c8287fb3cee4cc9e379a68965

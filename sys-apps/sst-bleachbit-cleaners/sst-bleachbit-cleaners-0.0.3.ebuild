@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI="6"
 
 DESCRIPTION="bleachbit cleaners from/for stepping stone GmbH"
 HOMEPAGE="https://github.com/stepping-stone/bleachbit-cleaners"

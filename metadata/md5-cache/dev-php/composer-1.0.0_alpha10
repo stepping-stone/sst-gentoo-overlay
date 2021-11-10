@@ -1,11 +1,11 @@
 DEFINED_PHASES=install unpack
 DESCRIPTION=Dependency Manager for PHP
-EAPI=5
+EAPI=6
 HOMEPAGE=https://getcomposer.org/
 KEYWORDS=~amd64
 LICENSE=MIT
 RDEPEND=dev-lang/php[json,xml,zip]
 SLOT=0
 SRC_URI=https://getcomposer.org/download/1.0.0-alpha10/composer.phar -> composer-1.0.0_alpha10.phar
-_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	versionator	2352c3fc97241f6a02042773c8287748
-_md5_=7ee9587144e8ca80089cbc9dd415a21c
+_eclasses_=estack	055c42df72f76a4f45ec92b35e83cd56	versionator	d3fb3ba33acc3bbbdc4d7970227c100d
+_md5_=6622f44c26660ca41883bbd43889dd77

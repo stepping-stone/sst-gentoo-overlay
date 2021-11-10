@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU Affero General Public Licence v3
 # $Header: $
 
-EAPI=5
+EAPI="6"
 
 PHP_EXT_NAME="newrelic"
 USE_PHP="php5-3 php5-4 php5-5 php5-6"
@@ -11,7 +11,7 @@ MY_PN="${PHP_EXT_NAME}-php5"
 MY_P="${MY_PN}-${PV}-linux"
 S="${WORKDIR}/${MY_P}"
 
-inherit php-ext-source-r2 user
+inherit php-ext-source-r3 user
 
 DESCRIPTION="New Relic PHP Agent"
 HOMEPAGE="http://newrelic.com/"

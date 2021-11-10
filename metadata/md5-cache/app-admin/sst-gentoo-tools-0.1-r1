@@ -6,4 +6,4 @@ KEYWORDS=amd64 x86
 LICENSE=GPL-3
 SLOT=0
 SRC_URI=https://github.com/stepping-stone/sst-gentoo-tools/archive/0.1.tar.gz -> sst-gentoo-tools.tar.gz
-_md5_=8fd432a6a3f199efd7c53d4d8d13c4e4
+_md5_=53e166ae6d3875d9aef9ff3bb6c3668b

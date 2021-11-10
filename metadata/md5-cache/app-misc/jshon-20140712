@@ -1,11 +1,12 @@
 DEFINED_PHASES=unpack
 DEPEND=dev-libs/jansson >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=parses, reads and creates JSON
-EAPI=5
+EAPI=6
 HOMEPAGE=http://kmkeen.com/jshon/
 KEYWORDS=~amd64
 LICENSE=MIT
+PROPERTIES=live
 RDEPEND=dev-libs/jansson
 SLOT=0
-_eclasses_=git-r3	918d6a744039c29af2cadc7317459765
-_md5_=6d48e635d7091d1da5dc9842a45f89ce
+_eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
+_md5_=f2829b33b76fe39b0d9acc14392544a2

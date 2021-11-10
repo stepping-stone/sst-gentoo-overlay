@@ -1,0 +1,8 @@
+DEFINED_PHASES=install
+DESCRIPTION=stepping stone GmbH binary vm firmware, based on sys-kernel/gentoo-sources
+EAPI=6
+KEYWORDS=amd64
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=https://mirror.stepping-stone.ch/public/gentoo/binary-kernel/sst-firmware-vm-bin-4.4.176.tar.gz
+_md5_=6f98d562474b6f5eedb9d5412ff1a8c0

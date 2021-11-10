@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-dns/pdns/pdns-3.4.2.ebuild,v 1.1 2015/02/14 16:51:48 swegener Exp $
 
-EAPI=5
+EAPI="6"
 
 inherit eutils multilib systemd user toolchain-funcs versionator
 

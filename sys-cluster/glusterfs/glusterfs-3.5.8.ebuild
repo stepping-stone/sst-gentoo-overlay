@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI="6"
 
 PYTHON_COMPAT=( python2_7 )
 AUTOTOOLS_AUTORECONF=1
 
-inherit autotools-utils elisp-common eutils multilib python-single-r1 versionator
+inherit autotools elisp-common eutils multilib python-single-r1 versionator
 
 DESCRIPTION="GlusterFS is a powerful network/cluster filesystem"
 HOMEPAGE="http://www.gluster.org/"

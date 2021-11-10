@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-apps/newrelic-sysmond/newrelic-sysmond-1.1.2.124.ebuild,v 1.5 2012/12/15 16:53:46 pacho Exp $
 
-EAPI=5
+EAPI="6"
 
 inherit user
 

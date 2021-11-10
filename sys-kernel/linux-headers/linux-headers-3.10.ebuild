@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="5"
+EAPI="6"
 
 ETYPE="headers"
 H_SUPPORTEDARCH="alpha amd64 arm arm64 avr32 bfin cris frv hexagon hppa ia64 m68k metag mips openrisc ppc ppc64 s390 score sh sparc tile x86 xtensa"
