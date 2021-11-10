@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: This ebuild is from mva overlay $
 
-EAPI="5"
+EAPI="6"
 
 PYTHON_COMPAT=( python{2_6,2_7} )
 

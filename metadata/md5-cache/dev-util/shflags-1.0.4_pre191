@@ -1,11 +1,12 @@
-DEFINED_PHASES=install preinst prepare test unpack
-DEPEND=|| ( dev-vcs/subversion[http] dev-vcs/subversion[webdav-neon] dev-vcs/subversion[webdav-serf] ) net-misc/rsync
+DEFINED_PHASES=install preinst test unpack
+DEPEND=dev-vcs/subversion[http(+)] net-misc/rsync
 DESCRIPTION=Command-line flags module for Unix shell scripts
-EAPI=5
+EAPI=6
 HOMEPAGE=http://code.google.com/p/shflags/
 IUSE=examples
 KEYWORDS=~amd64
 LICENSE=LGPL-2.1
+PROPERTIES=live
 SLOT=0
-_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ltprune	08f9e1d9ee0af8f5d9a7854efbcd8c0e	multilib	97f470f374f2e94ccab04a2fb21d811e	preserve-libs	ef207dc62baddfddfd39a164d9797648	subversion	3d1eb4b41d7190570a84f786958ebb13	toolchain-funcs	e4a9360924c5ce9f52e61342cde58512	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	2352c3fc97241f6a02042773c8287748
-_md5_=2577617c945a8671807cc69f90dbf3ce
+_eclasses_=estack	055c42df72f76a4f45ec92b35e83cd56	subversion	c74febd1baf21b1229704d6a953c27db	versionator	d3fb3ba33acc3bbbdc4d7970227c100d
+_md5_=2443bdb74a2097110dd7b85baf3bbfc7

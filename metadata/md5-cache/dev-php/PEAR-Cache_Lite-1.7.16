@@ -7,5 +7,5 @@ LICENSE=LGPL-3
 RDEPEND=>=dev-php/pear-1.8.1
 SLOT=0
 SRC_URI=https://pear.php.net/get/Cache_Lite-1.7.16.tgz
-_eclasses_=php-pear-r2	b6753d24e4b080c2bec51eb2d844699f
-_md5_=5df969c02abcb43464639f9614b930ea
+_eclasses_=php-pear-r2	4a7c293febeea04349068d5716ad29ff
+_md5_=6df340ce2b93a48c8679784807529add

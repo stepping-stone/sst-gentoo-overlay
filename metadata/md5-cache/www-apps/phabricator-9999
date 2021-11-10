@@ -1,11 +1,12 @@
 DEFINED_PHASES=install postinst prerm setup unpack
 DEPEND=>=dev-vcs/git-1.8.2.1[curl] >=app-admin/webapp-config-1.50.15
 DESCRIPTION=An open source, software engineering platform
-EAPI=5
+EAPI=6
 HOMEPAGE=http://phabricator.org/
 IUSE=git subversion vhosts
 LICENSE=Apache-2.0
+PROPERTIES=live
 RDEPEND=dev-vcs/arcanist dev-php/libphutil virtual/httpd-php dev-lang/php[iconv,curl,pcntl] || ( dev-lang/php[mysql] dev-lang/php[mysqli] ) git? ( dev-vcs/git[cgi] ) subversion? ( dev-vcs/subversion ) >=app-admin/webapp-config-1.50.15
 SLOT=9999
-_eclasses_=git-r3	918d6a744039c29af2cadc7317459765	webapp	6ae2395d7f341093c36057cb4f69101a
-_md5_=46503a4caec15d35a12a2dece41d181d
+_eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da	webapp	cd327e73cdb307ceb80dcca6b8ad8b52
+_md5_=fa1a79999d3fc2b5c680f5500d6f8367

@@ -1,9 +1,9 @@
 DEFINED_PHASES=install
 DESCRIPTION=Samsung SSD Magician DC
-EAPI=5
+EAPI=6
 HOMEPAGE=http://www.samsung.com/global/business/semiconductor/minisite/SSD/global/html/support/server_downloads.html
 KEYWORDS=amd64 ~x86
 LICENSE=Samsung-Magician-Software-EULA BSD-2 public-domain
 SLOT=0
 SRC_URI=http://www.samsung.com/global/business/semiconductor/minisite/SSD/downloads/software/samsung_magician_dc-v1.0_rtm_p2.tar.gz
-_md5_=311580229d7de036dd81ecbfd4616202
+_md5_=f6da51a249c5f63e635b9d074ad45fe1

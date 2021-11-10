@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI="6"
 
 DESCRIPTION="stepping stone GmbH binary vm kernel, based on sys-kernel/gentoo-sources"
 HOMEPAGE=""

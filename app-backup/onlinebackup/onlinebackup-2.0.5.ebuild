@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU Affero General Public License v3
 # $Header: $
 
-EAPI=5
+EAPI="6"
 
 inherit perl-module
 

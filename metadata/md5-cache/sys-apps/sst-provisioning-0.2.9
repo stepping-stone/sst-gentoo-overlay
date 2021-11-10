@@ -1,12 +1,12 @@
-DEFINED_PHASES=compile configure install prepare test unpack
-DEPEND=dev-lang/perl:=[-build(-)]
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dev-lang/perl
 DESCRIPTION=stepping stone GmbH Provisioning scripts
-EAPI=5
+EAPI=6
 HOMEPAGE=http://www.stepping-stone.ch/
 KEYWORDS=amd64
 LICENSE=EUPL
-RDEPEND=dev-perl/Config-IniFiles virtual/perl-Sys-Syslog virtual/perl-Getopt-Long dev-perl/LockFile-Simple virtual/perl-File-Path dev-perl/perl-ldap dev-perl/Net-SMTPS dev-perl/Net-OpenSSH dev-perl/Text-CSV dev-perl/IO-String dev-lang/perl:=[-build(-)]
+RDEPEND=dev-perl/Config-IniFiles virtual/perl-Sys-Syslog virtual/perl-Getopt-Long dev-perl/LockFile-Simple virtual/perl-File-Path dev-perl/perl-ldap dev-perl/Net-SMTPS dev-perl/Net-OpenSSH dev-perl/Text-CSV dev-perl/IO-String dev-lang/perl:=
 SLOT=0
 SRC_URI=http://github.com/stepping-stone/Provisioning/archive/v0.2.9.tar.gz -> sst-provisioning-0.2.9.tar.gz
-_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ltprune	08f9e1d9ee0af8f5d9a7854efbcd8c0e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	perl-functions	f2e3420aed32cf1abe33b4129b842636	perl-module	ee5593d6e2d067fafac171106655b5ce	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	e4a9360924c5ce9f52e61342cde58512	unpacker	ee2f5086cd7e7b747b061f58db14d89e	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
-_md5_=b575aacc32be0b14e7b8ce813ed0c69c
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	perl-functions	fea344a91ebf37efadf172c6a3de5a72	perl-module	bd9574a79c5f0a347a9ea3db5ad9ca72
+_md5_=7f48e304db2b2854688260875595a588

@@ -7,4 +7,4 @@ LICENSE=GPL-2
 RDEPEND=sys-boot/grub:2 sys-kernel/sst-firmware-vm-bin
 SLOT=4.4.119
 SRC_URI=https://mirror.stepping-stone.ch/public/gentoo/binary-kernel/sst-kernel-vm-bin-4.4.119.tar.gz
-_md5_=0488860684a2f80e2c1ab2080bb50216
+_md5_=d9fbc7e38ef3eeee47ea797b4dc27840

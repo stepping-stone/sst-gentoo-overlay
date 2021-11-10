@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI="6"
 
 DESCRIPTION="A collection of useful scripts for Gentoo Linux"
 HOMEPAGE="https://github.com/stepping-stone/sst-gentoo-tools"
