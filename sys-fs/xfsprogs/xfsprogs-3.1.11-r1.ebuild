@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsprogs/xfsprogs-3.1.11-r1.ebuild,v 1.1 2013/12/25 08:49:36 vapier Exp $
 
-EAPI="4"
+EAPI="5"
 
 inherit eutils toolchain-funcs multilib
 
