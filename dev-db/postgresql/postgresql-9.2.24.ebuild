@@ -1,12 +1,11 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="7"
 
 PYTHON_COMPAT=( python2_7 python3_6 )
 
-inherit eutils flag-o-matic linux-info multilib pam prefix python-single-r1 \
-		systemd user versionator
+inherit eutils flag-o-matic linux-info multilib pam prefix python-single-r1 systemd user
 
 KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~ppc-macos ~x86-solaris"
 
