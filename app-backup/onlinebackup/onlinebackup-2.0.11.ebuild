@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU Affero General Public License v3
 # $Header: $
 
-EAPI="6"
+EAPI="8"
 
 inherit perl-module
 
@@ -41,5 +41,6 @@ src_install() {
 	keepdir /var/lib/OnlineBackup
 
 	dodoc CHANGES doc/*.txt
-	dohtml doc/*.html
+	HTML_DOCS=( doc/*.html )
+	einstalldocs
 }
