@@ -3,10 +3,11 @@ DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Swiss army knife to to interact with Alfresco from the shell
 EAPI=6
 HOMEPAGE=https://code.google.com/p/alfresco-shell-tools/
+INHERIT=git-r3
 KEYWORDS=~amd64
 LICENSE=GPL-3
 PROPERTIES=live
 RDEPEND=app-misc/jshon net-misc/curl app-shells/bash
 SLOT=0
-_eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
+_eclasses_=git-r3	2347f8fe2d392b2a091191f94be37e6f
 _md5_=50aa4c94b5261d35003dfd15e1f2d186

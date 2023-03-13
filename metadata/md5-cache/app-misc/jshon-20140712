@@ -3,10 +3,11 @@ DEPEND=dev-libs/jansson >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=parses, reads and creates JSON
 EAPI=6
 HOMEPAGE=http://kmkeen.com/jshon/
+INHERIT=git-r3
 KEYWORDS=~amd64
 LICENSE=MIT
 PROPERTIES=live
 RDEPEND=dev-libs/jansson
 SLOT=0
-_eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
+_eclasses_=git-r3	2347f8fe2d392b2a091191f94be37e6f
 _md5_=f2829b33b76fe39b0d9acc14392544a2

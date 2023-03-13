@@ -3,10 +3,11 @@ DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Command-line interface to Phabricator
 EAPI=6
 HOMEPAGE=https://github.com/phacility/arcanist
+INHERIT=bash-completion-r1 git-r3
 KEYWORDS=~amd64
 LICENSE=Apache-2.0
 PROPERTIES=live
 RDEPEND=dev-lang/php dev-php/libphutil dev-python/pycodestyle
 SLOT=0
-_eclasses_=bash-completion-r1	d3a60385655d9b402be765a6de333245	git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da	multilib	4b66d835ec72e021e359bb81eacfe988	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa
+_eclasses_=bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	git-r3	2347f8fe2d392b2a091191f94be37e6f	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b
 _md5_=65dbbfe73aee391bb6d249952607b739

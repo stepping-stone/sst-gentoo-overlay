@@ -2,10 +2,11 @@ DEFINED_PHASES=install postinst postrm
 DESCRIPTION=Dispatch notifications using PHP callbacks
 EAPI=6
 HOMEPAGE=https://pear.php.net/package/Event_Dispatcher
+INHERIT=php-pear-r2
 KEYWORDS=amd64
 LICENSE=BSD
 RDEPEND=>=dev-php/pear-1.8.1
 SLOT=0
 SRC_URI=https://pear.php.net/get/Event_Dispatcher-1.1.0.tgz
-_eclasses_=php-pear-r2	4a7c293febeea04349068d5716ad29ff
+_eclasses_=php-pear-r2	64a0c48972c51aa882f41e6b59374bcb
 _md5_=425e895c60650ab72c64325f3de5df59
