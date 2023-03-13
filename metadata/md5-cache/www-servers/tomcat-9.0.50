@@ -1,14 +1,15 @@
 DEFINED_PHASES=compile configure install postinst preinst prepare setup test unpack
-DEPEND=dev-java/eclipse-ecj:4.15 dev-java/glassfish-xmlrpc-api:0 ~dev-java/tomcat-servlet-api-9.0.50:4.0 dev-java/wsdl4j:0 app-admin/pwgen >=dev-java/ant-core-1.9.13 virtual/jdk:1.8 test? ( >=dev-java/ant-junit-1.9:0 dev-java/easymock:3.2 ) >=dev-java/java-config-2.2.0-r3 source? ( app-arch/zip ) >=dev-java/ant-core-1.8.2:0 >=dev-java/javatoolkit-0.3.0-r2
+DEPEND=dev-java/eclipse-ecj:4.15 dev-java/glassfish-xmlrpc-api:0 ~dev-java/tomcat-servlet-api-9.0.50:4.0 dev-java/wsdl4j:0 app-admin/pwgen >=dev-java/ant-core-1.9.13 virtual/jdk:1.8 test? ( >=dev-java/ant-junit-1.9:0 dev-java/easymock:3.2 ) >=dev-java/java-config-2.2.0-r3 source? ( app-arch/zip ) >=dev-java/ant-core-1.8.2:0 dev-java/javatoolkit
 DESCRIPTION=Tomcat Servlet-4.0/JSP-2.3/EL-3.0/WebSocket-1.1/JASPIC-1.1 Container
 EAPI=6
 HOMEPAGE=https://tomcat.apache.org/
-IUSE=extra-webapps elibc_FreeBSD doc source test
+INHERIT=java-pkg-2 java-ant-2 prefix
+IUSE=extra-webapps doc source test
 KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~x86-solaris
 LICENSE=Apache-2.0
 RDEPEND=dev-java/eclipse-ecj:4.15 dev-java/glassfish-xmlrpc-api:0 ~dev-java/tomcat-servlet-api-9.0.50:4.0 dev-java/wsdl4j:0 acct-group/tomcat acct-user/tomcat virtual/jre >=dev-java/java-config-2.2.0-r3 source? ( app-arch/zip )
 RESTRICT=test
 SLOT=9
 SRC_URI=mirror://apache/tomcat/tomcat-9/v9.0.50/src/apache-tomcat-9.0.50-src.tar.gz https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bnd/5.1.1/biz.aQute.bnd-5.1.1.jar https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/5.1.1/biz.aQute.bndlib-5.1.1.jar
-_eclasses_=desktop	c0d27bf73aa08ca05b663dbd31fbef28	eapi7-ver	1a0a60ad07c8b32d2faba2d085dc0f24	edos2unix	33e347e171066657f91f8b0c72ec8773	epatch	9f813bb3c47cf2e60619a663b87c5f4e	estack	055c42df72f76a4f45ec92b35e83cd56	eutils	dab5d8ec471d025b79c9e6906bcf3bff	java-ant-2	e83ca06db890ca292b0b6d43e376e20d	java-pkg-2	a3d583b3f640032c3eff643a4191bd03	java-utils-2	8a3af9303fdbeca4510a6ba6e91b1460	ltprune	4f3f2db5ce3ccbeeacdf3f94954043aa	multilib	4b66d835ec72e021e359bb81eacfe988	prefix	d04f14b297013ad1410550c0757f14f8	preserve-libs	dbc9f8d2d49c66467bc327fddd8317bd	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	vcs-clean	b690a7e9b6c497cf59326a7545df4283	versionator	d3fb3ba33acc3bbbdc4d7970227c100d	wrapper	4251d4c84c25f59094fd557e0063a974
+_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d	eapi7-ver	1a0a60ad07c8b32d2faba2d085dc0f24	edos2unix	33e347e171066657f91f8b0c72ec8773	epatch	447396341f5f896d722e435a06f87a4f	eqawarn	c9847c43b3253a276ae2eabddedab3d7	estack	055c42df72f76a4f45ec92b35e83cd56	eutils	8f942ebdcf04334697649d4a0bf65a32	java-ant-2	3745cb8c0fe6525dafe8e2422a8fd501	java-pkg-2	a6b42ffd8b6827abbd8cf09329c2c8fb	java-utils-2	eefed04ac580a259ecda1fbd966640b7	ltprune	97143780d341cc8d8f1d4c6187a36d29	multilib	5ca4e49abed8e3a2f7b56920eadee157	prefix	eab3c99d77fe00506c109c8a736186f7	preserve-libs	a8e50acee31b5759b4df1f7707cae54b	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	vcs-clean	d271b7bc7e6a009758d7d4ef749174e3	versionator	d3fb3ba33acc3bbbdc4d7970227c100d	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=a15bec78d43e00ac3022746a2a968e9d
