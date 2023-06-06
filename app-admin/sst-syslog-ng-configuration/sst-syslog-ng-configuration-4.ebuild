@@ -4,8 +4,6 @@
 
 EAPI="6"
 
-inherit user
-
 MY_PN="syslog-ng"
 MY_P="${MY_PN}-${PV}"
 
@@ -19,13 +17,12 @@ KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="app-admin/syslog-ng"
+RDEPEND="
+	acct-group/at
+	app-admin/syslog-ng
+"
 
 S="${WORKDIR}/${MY_P}"
-
-pkg_setup() {
-	enewgroup log
-}
 
 src_install() {
 	insinto /etc/syslog-ng
