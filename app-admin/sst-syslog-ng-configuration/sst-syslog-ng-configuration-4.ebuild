@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="
-	acct-group/at
+	acct-group/log
 	app-admin/syslog-ng
 "
 
